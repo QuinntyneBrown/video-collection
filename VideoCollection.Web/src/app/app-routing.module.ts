@@ -1,10 +1,16 @@
 ﻿import { Routes, RouterModule } from '@angular/router';
 import { LandingPageComponent } from "./landing";
+import { AdminPageComponent } from "./admin";
+
 
 export const routes: Routes = [
     {
         path: '',
         component: LandingPageComponent,
+    },
+    {
+        path: 'admin',
+        component: AdminPageComponent,
     }
 ];
 
@@ -13,5 +19,6 @@ export const RoutingModule = RouterModule.forRoot([
 ]);
 
 export const routedComponents = [
+    AdminPageComponent,
     LandingPageComponent
 ];

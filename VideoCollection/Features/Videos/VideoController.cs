@@ -5,9 +5,14 @@ using System.Web.Http.Description;
 
 namespace VideoCollection.Features.Videos
 {
+    public interface IVideoController
+    {
+
+    }
+
     [Authorize]
     [RoutePrefix("api/video")]
-    public class VideoController : ApiController
+    public class VideoController : ApiController, IVideoController
     {
         public VideoController(IMediator mediator)
         {

@@ -21,7 +21,7 @@ namespace VideoCollection.Features.Users
 
         public class GetRoleByIdHandler : IAsyncRequestHandler<GetRoleByIdRequest, GetRoleByIdResponse>
         {
-            public GetRoleByIdHandler(QuinntyneBrownPhotographyDataContext dataContext, ICache cache)
+            public GetRoleByIdHandler(VideoCollectionDataContext dataContext, ICache cache)
             {
                 _dataContext = dataContext;
                 _cache = cache;
@@ -35,7 +35,7 @@ namespace VideoCollection.Features.Users
                 };
             }
 
-            private readonly QuinntyneBrownPhotographyDataContext _dataContext;
+            private readonly VideoCollectionDataContext _dataContext;
             private readonly ICache _cache;
         }
 

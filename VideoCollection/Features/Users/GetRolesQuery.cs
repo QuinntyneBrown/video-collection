@@ -19,7 +19,7 @@ namespace VideoCollection.Features.Users
 
         public class GetRolesHandler : IAsyncRequestHandler<GetRolesRequest, GetRolesResponse>
         {
-            public GetRolesHandler(QuinntyneBrownPhotographyDataContext dataContext, ICache cache)
+            public GetRolesHandler(VideoCollectionDataContext dataContext, ICache cache)
             {
                 _dataContext = dataContext;
                 _cache = cache;
@@ -34,7 +34,7 @@ namespace VideoCollection.Features.Users
                 };
             }
 
-            private readonly QuinntyneBrownPhotographyDataContext _dataContext;
+            private readonly VideoCollectionDataContext _dataContext;
             private readonly ICache _cache;
         }
 

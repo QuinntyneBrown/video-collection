@@ -206,6 +206,18 @@
     <Content Include="src\app\admin\admin-page.component.scss">
       <DependentUpon>admin-page.component.ts</DependentUpon>
     </Content>
+    <Content Include="src\app\admin\videos\video-edit-page.component.html">
+      <DependentUpon>video-edit-page.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\admin\videos\video-edit-page.component.scss">
+      <DependentUpon>video-edit-page.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\admin\videos\video-list-page.component.html">
+      <DependentUpon>video-list-page.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\admin\videos\video-list-page.component.scss">
+      <DependentUpon>video-list-page.component.ts</DependentUpon>
+    </Content>
     <Content Include="src\app\app.component.html">
       <DependentUpon>app.component.ts</DependentUpon>
     </Content>
@@ -254,6 +266,7 @@
     <TypeScriptCompile Include="src\app\app-routing.module.ts" />
     <TypeScriptCompile Include="src\app\environment.ts" />
     <TypeScriptCompile Include="src\app\rxjs-extensions.ts" />
+    <TypeScriptCompile Include="src\app\shared\guards\auth-guard.service.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\polyfills.ts" />
     <TypeScriptCompile Include="src\vendor.ts" />
@@ -267,8 +280,14 @@
     <TypeScriptCompile Include="src\app\admin\index.ts" />
     <TypeScriptCompile Include="src\app\login\login-page.component.ts" />
     <TypeScriptCompile Include="src\app\login\index.ts" />
+    <TypeScriptCompile Include="src\app\shared\shared.module.ts" />
+    <TypeScriptCompile Include="src\app\shared\guards\index.ts" />
+    <TypeScriptCompile Include="src\app\admin\videos\video-list-page.component.ts" />
+    <TypeScriptCompile Include="src\app\admin\videos\video-edit-page.component.ts" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="src\app\shared\components\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

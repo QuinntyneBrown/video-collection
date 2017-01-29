@@ -21,7 +21,7 @@ namespace VideoCollection.Features.Users
 
         public class GetUserByIdHandler : IAsyncRequestHandler<GetUserByIdRequest, GetUserByIdResponse>
         {
-            public GetUserByIdHandler(QuinntyneBrownPhotographyDataContext dataContext, ICache cache)
+            public GetUserByIdHandler(VideoCollectionDataContext dataContext, ICache cache)
             {
                 _dataContext = dataContext;
                 _cache = cache;
@@ -35,7 +35,7 @@ namespace VideoCollection.Features.Users
                 };
             }
 
-            private readonly QuinntyneBrownPhotographyDataContext _dataContext;
+            private readonly VideoCollectionDataContext _dataContext;
             private readonly ICache _cache;
         }
 

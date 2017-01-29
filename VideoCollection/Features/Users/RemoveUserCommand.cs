@@ -20,7 +20,7 @@ namespace VideoCollection.Features.Users
 
         public class RemoveUserHandler : IAsyncRequestHandler<RemoveUserRequest, RemoveUserResponse>
         {
-            public RemoveUserHandler(QuinntyneBrownPhotographyDataContext dataContext, ICache cache)
+            public RemoveUserHandler(VideoCollectionDataContext dataContext, ICache cache)
             {
                 _dataContext = dataContext;
                 _cache = cache;
@@ -34,7 +34,7 @@ namespace VideoCollection.Features.Users
                 return new RemoveUserResponse();
             }
 
-            private readonly QuinntyneBrownPhotographyDataContext _dataContext;
+            private readonly VideoCollectionDataContext _dataContext;
             private readonly ICache _cache;
         }
     }

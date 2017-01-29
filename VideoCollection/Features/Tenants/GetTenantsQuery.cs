@@ -19,7 +19,7 @@ namespace VideoCollection.Features.Tenants
 
         public class GetTenantsHandler : IAsyncRequestHandler<GetTenantsRequest, GetTenantsResponse>
         {
-            public GetTenantsHandler(QuinntyneBrownPhotographyDataContext dataContext, ICache cache)
+            public GetTenantsHandler(VideoCollectionDataContext dataContext, ICache cache)
             {
                 _dataContext = dataContext;
                 _cache = cache;
@@ -34,7 +34,7 @@ namespace VideoCollection.Features.Tenants
                 };
             }
 
-            private readonly QuinntyneBrownPhotographyDataContext _dataContext;
+            private readonly VideoCollectionDataContext _dataContext;
             private readonly ICache _cache;
         }
 

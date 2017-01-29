@@ -20,7 +20,7 @@ namespace VideoCollection.Features.Tenants
 
         public class RemoveTenantHandler : IAsyncRequestHandler<RemoveTenantRequest, RemoveTenantResponse>
         {
-            public RemoveTenantHandler(QuinntyneBrownPhotographyDataContext dataContext, ICache cache)
+            public RemoveTenantHandler(VideoCollectionDataContext dataContext, ICache cache)
             {
                 _dataContext = dataContext;
                 _cache = cache;
@@ -34,7 +34,7 @@ namespace VideoCollection.Features.Tenants
                 return new RemoveTenantResponse();
             }
 
-            private readonly QuinntyneBrownPhotographyDataContext _dataContext;
+            private readonly VideoCollectionDataContext _dataContext;
             private readonly ICache _cache;
         }
     }

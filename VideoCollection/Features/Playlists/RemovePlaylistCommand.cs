@@ -20,7 +20,7 @@ namespace VideoCollection.Features.Playlists
 
         public class RemovePlaylistHandler : IAsyncRequestHandler<RemovePlaylistRequest, RemovePlaylistResponse>
         {
-            public RemovePlaylistHandler(QuinntyneBrownPhotographyDataContext dataContext, ICache cache)
+            public RemovePlaylistHandler(VideoCollectionDataContext dataContext, ICache cache)
             {
                 _dataContext = dataContext;
                 _cache = cache;
@@ -34,7 +34,7 @@ namespace VideoCollection.Features.Playlists
                 return new RemovePlaylistResponse();
             }
 
-            private readonly QuinntyneBrownPhotographyDataContext _dataContext;
+            private readonly VideoCollectionDataContext _dataContext;
             private readonly ICache _cache;
         }
     }

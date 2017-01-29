@@ -7,6 +7,8 @@ namespace VideoCollection.Data.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Slug { get; set; }
+        public string YouTubeVideoId { get; set; }
+        public string Description { get; set; }
         public DateTime CreatedOn { get; set; }
         public string CreatedBy { get; set; }
         public bool IsDeleted { get; set; }

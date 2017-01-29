@@ -23,7 +23,7 @@ namespace VideoCollection.Features.Users
 
         public class AddOrUpdateRoleHandler : IAsyncRequestHandler<AddOrUpdateRoleRequest, AddOrUpdateRoleResponse>
         {
-            public AddOrUpdateRoleHandler(QuinntyneBrownPhotographyDataContext dataContext, ICache cache)
+            public AddOrUpdateRoleHandler(VideoCollectionDataContext dataContext, ICache cache)
             {
                 _dataContext = dataContext;
                 _cache = cache;
@@ -43,7 +43,7 @@ namespace VideoCollection.Features.Users
                 };
             }
 
-            private readonly QuinntyneBrownPhotographyDataContext _dataContext;
+            private readonly VideoCollectionDataContext _dataContext;
             private readonly ICache _cache;
         }
 

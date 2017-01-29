@@ -221,12 +221,12 @@
     <Compile Include="Data\Models\User.cs" />
     <Compile Include="Data\Models\Role.cs" />
     <Compile Include="Data\Models\PlaylistItem.cs" />
+    <Compile Include="Features\Playlists\PlaylistController.cs" />
     <Compile Include="Features\Playlists\AddOrUpdatePlaylistCommand.cs" />
     <Compile Include="Features\Playlists\GetPlaylistsQuery.cs" />
     <Compile Include="Features\Playlists\GetPlaylistByIdQuery.cs" />
     <Compile Include="Features\Playlists\RemovePlaylistCommand.cs" />
     <Compile Include="Features\Playlists\PlaylistApiModel.cs" />
-    <Compile Include="Features\Playlists\PlaylistController.cs" />
     <Compile Include="Features\Playlists\AddOrUpdatePlaylistItemCommand.cs" />
     <Compile Include="Features\Playlists\GetPlaylistItemsQuery.cs" />
     <Compile Include="Features\Playlists\GetPlaylistItemByIdQuery.cs" />

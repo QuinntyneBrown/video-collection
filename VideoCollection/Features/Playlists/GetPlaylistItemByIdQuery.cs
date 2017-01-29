@@ -21,7 +21,7 @@ namespace VideoCollection.Features.Playlists
 
         public class GetPlaylistItemByIdHandler : IAsyncRequestHandler<GetPlaylistItemByIdRequest, GetPlaylistItemByIdResponse>
         {
-            public GetPlaylistItemByIdHandler(QuinntyneBrownPhotographyDataContext dataContext, ICache cache)
+            public GetPlaylistItemByIdHandler(VideoCollectionDataContext dataContext, ICache cache)
             {
                 _dataContext = dataContext;
                 _cache = cache;
@@ -35,7 +35,7 @@ namespace VideoCollection.Features.Playlists
                 };
             }
 
-            private readonly QuinntyneBrownPhotographyDataContext _dataContext;
+            private readonly VideoCollectionDataContext _dataContext;
             private readonly ICache _cache;
         }
 

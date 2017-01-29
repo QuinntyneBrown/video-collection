@@ -20,7 +20,7 @@ namespace VideoCollection.Features.Users
 
         public class RemoveRoleHandler : IAsyncRequestHandler<RemoveRoleRequest, RemoveRoleResponse>
         {
-            public RemoveRoleHandler(QuinntyneBrownPhotographyDataContext dataContext, ICache cache)
+            public RemoveRoleHandler(VideoCollectionDataContext dataContext, ICache cache)
             {
                 _dataContext = dataContext;
                 _cache = cache;
@@ -34,7 +34,7 @@ namespace VideoCollection.Features.Users
                 return new RemoveRoleResponse();
             }
 
-            private readonly QuinntyneBrownPhotographyDataContext _dataContext;
+            private readonly VideoCollectionDataContext _dataContext;
             private readonly ICache _cache;
         }
     }

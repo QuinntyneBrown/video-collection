@@ -23,7 +23,7 @@ namespace VideoCollection.Features.Playlists
 
         public class AddOrUpdatePlaylistHandler : IAsyncRequestHandler<AddOrUpdatePlaylistRequest, AddOrUpdatePlaylistResponse>
         {
-            public AddOrUpdatePlaylistHandler(QuinntyneBrownPhotographyDataContext dataContext, ICache cache)
+            public AddOrUpdatePlaylistHandler(VideoCollectionDataContext dataContext, ICache cache)
             {
                 _dataContext = dataContext;
                 _cache = cache;
@@ -43,7 +43,7 @@ namespace VideoCollection.Features.Playlists
                 };
             }
 
-            private readonly QuinntyneBrownPhotographyDataContext _dataContext;
+            private readonly VideoCollectionDataContext _dataContext;
             private readonly ICache _cache;
         }
 
