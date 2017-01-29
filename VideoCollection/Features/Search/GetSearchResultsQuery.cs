@@ -15,6 +15,9 @@ namespace VideoCollection.Features.Search
     {
         public class GetSearchResultsRequest : IAsyncRequest<GetSearchResultsResponse> {
             public string Query { get; set; }
+            public int? Top { get; set; }
+            public int? Skip { get; set; }
+            public string Filter { get; set; }
         }
 
         public class GetSearchResultsResponse
@@ -25,9 +28,12 @@ namespace VideoCollection.Features.Search
         public class GetSearchResultsHandler : IAsyncRequestHandler<GetSearchResultsRequest, GetSearchResultsResponse>
         {
             public GetSearchResultsHandler(
-                IDocumentsOperations documentOperations
+                ISearchConfiguration searchConfiguration
                 ) {
-                _documentOperations = documentOperations;
+                _documentOperations = new SearchIndexClient(
+                    searchConfiguration.SearchServiceName, 
+                    searchConfiguration.IndexName, 
+                    new SearchCredentials(searchConfiguration.ApiKey)).Documents;
             }
 
             public async Task<GetSearchResultsResponse> Handle(GetSearchResultsRequest request)

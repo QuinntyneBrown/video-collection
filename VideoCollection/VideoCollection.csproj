@@ -218,6 +218,7 @@
     <Compile Include="Utilities\CacheProvider.cs" />
     <Compile Include="Utilities\ICache.cs" />
     <Compile Include="Utilities\ICacheProvider.cs" />
+    <Compile Include="Utilities\IDistributedCache.cs" />
     <Compile Include="Utilities\ILogger.cs" />
     <Compile Include="Utilities\ILoggerFactory.cs" />
     <Compile Include="Utilities\ILoggerProvider.cs" />
@@ -258,7 +259,10 @@
     <Compile Include="Features\Users\RoleController.cs" />
     <Compile Include="Features\Search\GetSearchResultsQuery.cs" />
     <Compile Include="Features\Search\SearchResultApiModel.cs" />
-    <Compile Include="Features\Search\SearchResultController.cs" />
+    <Compile Include="Features\Search\SearchController.cs" />
+    <Compile Include="Features\Search\SearchConfiguration.cs" />
+    <Compile Include="Features\Search\ISearchConfiguration.cs" />
+    <Compile Include="Features\Search\MergeOrUploadCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
