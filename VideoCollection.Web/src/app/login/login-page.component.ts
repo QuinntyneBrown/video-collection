@@ -17,6 +17,8 @@ import {
 } from "@angular/forms";
 import { ApiService } from "../shared";
 
+import { LoginRedirectService } from "./login-redirect.service";
+
 @Component({
     template: require("./login-page.component.html"),
     styles: [require("./login-page.component.scss")],
@@ -25,6 +27,7 @@ import { ApiService } from "../shared";
 export class LoginPageComponent implements AfterViewInit {
     constructor(
         private _apiService: ApiService,
+        private _loginRedirectService: LoginRedirectService,
         private _renderer: Renderer,
         private _elementRef: ElementRef
     ) { }
@@ -41,7 +44,7 @@ export class LoginPageComponent implements AfterViewInit {
     ngAfterViewInit() {
         this._renderer.invokeElementMethod(this.username, 'focus', []);
         this.form.patchValue({ "username": "quinntynebrown@gmail.com" });
-        this.form.patchValue({ "password": "P@ssword" });
+        this.form.patchValue({ "password": "P@ssw0rd" });
     }
 
     public tryToLogin() {
@@ -49,7 +52,7 @@ export class LoginPageComponent implements AfterViewInit {
             username: this.form.value.username,
             password: this.form.value.password
         }).subscribe(x => {
-
+            this._loginRedirectService.redirectPreLogin();
         });        
     }
 }

@@ -10,6 +10,8 @@ import "./rxjs-extensions";
 
 import { AppComponent } from './app.component';
 
+import { LoginRedirectService, CurrentUserService } from "./login";
+
 import {
     RoutingModule,
     routedComponents
@@ -23,7 +25,9 @@ const declarables = [
 const providers = [
     ApiService,
     Storage,
-    OAuthHelper         
+    OAuthHelper,
+    LoginRedirectService,
+    CurrentUserService
 ];
 
 @NgModule({

@@ -6,7 +6,7 @@ using Microsoft.Practices.Unity.InterceptionExtension;
 using VideoCollection.Security;
 using MediatR;
 using static VideoCollection.Security.AuthenticateCommand;
-
+using static VideoCollection.Security.GetClaimsForUserQuery;
 namespace VideoCollection
 {
     public class UnityConfiguration
@@ -15,7 +15,7 @@ namespace VideoCollection
         {
             var container = new UnityContainer();
             container.RegisterType<IAsyncRequestHandler<AuthenticateRequest, AuthenticateResponse>, AuthenticateHandler>();
-
+            container.RegisterType<IAsyncRequestHandler<GetClaimsForUserRequest, GetClaimsForUserResponse>, GetClaimsForUserHandler>();
             container.RegisterTypes(AllClasses.FromAssemblies(typeof(UnityConfiguration).Assembly),WithMappings.FromMatchingInterface,WithName.Default);
             container.RegisterType<IMediator, Mediator>();
             container.RegisterInstance<SingleInstanceFactory>(t => container.Resolve(t));
