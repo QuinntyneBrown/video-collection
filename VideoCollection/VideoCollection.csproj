@@ -266,12 +266,24 @@
     <Compile Include="Security\AuthenticateCommand.cs" />
     <Compile Include="Security\GetClaimsForUserQuery.cs" />
     <Compile Include="Utilities\RedisCache.cs" />
+    <Compile Include="Data\Models\DigitalAsset.cs" />
+    <Compile Include="Features\DigitalAssets\AddOrUpdateDigitalAssetCommand.cs" />
+    <Compile Include="Features\DigitalAssets\GetDigitalAssetsQuery.cs" />
+    <Compile Include="Features\DigitalAssets\GetDigitalAssetByIdQuery.cs" />
+    <Compile Include="Features\DigitalAssets\RemoveDigitalAssetCommand.cs" />
+    <Compile Include="Features\DigitalAssets\DigitalAssetApiModel.cs" />
+    <Compile Include="Features\DigitalAssets\DigitalAssetController.cs" />
+    <Compile Include="Features\DigitalAssets\UploadHandlers\StreamHelper.cs" />
+    <Compile Include="Features\DigitalAssets\UploadHandlers\FileMultipartFormDataStreamProvider.cs" />
+    <Compile Include="Features\DigitalAssets\UploadHandlers\InMemoryMultipartFormDataStreamProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Features\DigitalAssets\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -13,6 +13,7 @@ namespace VideoCollection.Data
             Configuration.AutoDetectChangesEnabled = true;
         }
 
+        public DbSet<DigitalAsset> DigitalAssets { get; set; }
         public DbSet<Playlist> Playlists { get; set; }
         public DbSet<PlaylistItem> PlaylistItems { get; set; }
         public DbSet<Video> Videos { get; set; }
