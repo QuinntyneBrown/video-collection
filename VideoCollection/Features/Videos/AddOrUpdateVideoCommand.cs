@@ -16,10 +16,7 @@ namespace VideoCollection.Features.Videos
             public VideoApiModel Video { get; set; }
         }
 
-        public class AddOrUpdateVideoResponse
-        {
-
-        }
+        public class AddOrUpdateVideoResponse { }
 
         public class AddOrUpdateVideoHandler : IAsyncRequestHandler<AddOrUpdateVideoRequest, AddOrUpdateVideoResponse>
         {
@@ -31,16 +28,15 @@ namespace VideoCollection.Features.Videos
 
             public async Task<AddOrUpdateVideoResponse> Handle(AddOrUpdateVideoRequest request)
             {
-                var entity = await _dataContext.Videos
+                Video entity = await _dataContext.Videos
                     .SingleOrDefaultAsync(x => x.Id == request.Video.Id && x.IsDeleted == false);
                 if (entity == null) _dataContext.Videos.Add(entity = new Video());
-                entity.Name = request.Video.Name;
+                entity.Title = request.Video.Title;
+                entity.Description = request.Video.Description;
+                entity.Category = request.Video.Category;
+                entity.YouTubeVideoId = request.Video.YouTubeVideoId;
                 await _dataContext.SaveChangesAsync();
-
-                return new AddOrUpdateVideoResponse()
-                {
-
-                };
+                return new AddOrUpdateVideoResponse() { };
             }
 
             private readonly VideoCollectionDataContext _dataContext;

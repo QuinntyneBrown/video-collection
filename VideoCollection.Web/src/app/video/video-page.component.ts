@@ -32,5 +32,7 @@ export class VideoPageComponent implements OnInit {
             });
     }
 
+    public currentVideo: Video = <Video>{};
+
     public videos: Array<Video> = [];
 }

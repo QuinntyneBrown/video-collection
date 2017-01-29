@@ -32,7 +32,7 @@ namespace VideoCollection.Features.Search
             {
                 var document = new Document();
                 document.Add("id", $"{video.Id}");
-                document.Add("name", video.Name);
+                document.Add("title", video.Title);
                 document.Add("description", video.Description);
                 document.Add("abstract", video.Abstract);
                 document.Add("youTubeVideoId", video.YouTubeVideoId);

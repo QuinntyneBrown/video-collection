@@ -19,7 +19,7 @@ export class ApiService {
     }
 
     public getVideos() {
-        return <Observable<Array<Video>>this._http
+        return <Observable<Array<Video>>>this._http
             .get(`${this._baseUrl}/api/video/get`)
             .map(data => data.json());
     }

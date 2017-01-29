@@ -194,6 +194,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiConfiguration.cs" />
+    <Compile Include="Features\Search\GetSuggestResultsQuery.cs" />
     <Compile Include="Features\Videos\GetVideoBySlugQuery.cs" />
     <Compile Include="Filters\WebApiUnityActionFilterProvider.cs" />
     <Compile Include="Data\VideoCollectionDataContext.cs" />
@@ -202,11 +203,7 @@
     <Compile Include="Data\Models\Video.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\AuthConfiguration.cs" />
-    <Compile Include="Security\AuthenticateRequest.cs" />
-    <Compile Include="Security\AuthenticateResponse.cs" />
     <Compile Include="Security\EncryptionService.cs" />
-    <Compile Include="Security\GetClaimsForUserRequest.cs" />
-    <Compile Include="Security\GetClaimsForUserResponse.cs" />
     <Compile Include="Security\IAuthConfiguration.cs" />
     <Compile Include="Security\IEncryptionService.cs" />
     <Compile Include="Security\JwtOptions.cs" />
@@ -262,6 +259,8 @@
     <Compile Include="Features\Search\SearchConfiguration.cs" />
     <Compile Include="Features\Search\ISearchConfiguration.cs" />
     <Compile Include="Features\Search\MergeOrUploadCommand.cs" />
+    <Compile Include="Security\AuthenticateCommand.cs" />
+    <Compile Include="Security\GetClaimsForUserQuery.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -19,7 +19,7 @@ namespace VideoCollection.Security
         {
             var identity = new ClaimsIdentity(_authConfiguration.AuthType);
             var username = context.OwinContext.Get<string>($"{_authConfiguration.AuthType}:username");
-            var response = await _mediator.SendAsync(new GetClaimsForUserRequest(username));
+            var response = await _mediator.SendAsync(new GetClaimsForUserQuery.GetClaimsForUserRequest() { Username = username });
 
             foreach (var claim in response.Claims)
             {
@@ -34,7 +34,7 @@ namespace VideoCollection.Security
             {
                 var username = context.Parameters["username"];
                 var password = context.Parameters["password"];
-                var response = await _mediator.SendAsync(new AuthenticateRequest(username, password));
+                var response = await _mediator.SendAsync(new AuthenticateCommand.AuthenticateRequest() { Username = username, Password = password });
                 if (response.IsAuthenticated)
                 {
                     context.OwinContext.Set($"{_authConfiguration.AuthType}:username", username);

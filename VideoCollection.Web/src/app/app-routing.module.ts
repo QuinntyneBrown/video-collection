@@ -1,5 +1,6 @@
 ﻿import { Routes, RouterModule } from '@angular/router';
 import { LandingPageComponent } from "./landing";
+import { LoginPageComponent } from "./login";
 import { AdminPageComponent } from "./admin";
 import { AboutPageComponent } from "./about";
 import { VideoPageComponent } from "./video";
@@ -8,6 +9,10 @@ export const routes: Routes = [
     {
         path: '',
         component: LandingPageComponent,
+    },
+    {
+        path: 'login',
+        component: LoginPageComponent,
     },
     {
         path: 'admin',
@@ -30,5 +35,7 @@ export const RoutingModule = RouterModule.forRoot([
 export const routedComponents = [
     AdminPageComponent,
     AboutPageComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    LoginPageComponent,
+    VideoPageComponent
 ];

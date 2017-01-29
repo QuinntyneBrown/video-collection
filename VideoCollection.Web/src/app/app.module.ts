@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { RouterModule  } from '@angular/router';
 import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ApiService, Storage, OAuthHelper } from "./shared";
 
 import "./rxjs-extensions";
 
@@ -20,7 +21,9 @@ const declarables = [
 ];
 
 const providers = [
-
+    ApiService,
+    Storage,
+    OAuthHelper         
 ];
 
 @NgModule({
@@ -30,6 +33,7 @@ const providers = [
         HttpModule,
         CommonModule,
         FormsModule,
+        ReactiveFormsModule,
         RouterModule
     ],
     providers: providers,

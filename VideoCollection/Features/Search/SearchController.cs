@@ -21,6 +21,13 @@ namespace VideoCollection.Features.Search
         public async Task<IHttpActionResult> Get([FromUri]GetSearchResultsQuery.GetSearchResultsRequest request)
             => Ok(await _mediator.SendAsync(request));
 
+        [Route("suggest")]
+        [AllowAnonymous]
+        [HttpGet]
+        [ResponseType(typeof(GetSuggestResultsQuery.GetSuggestResultsResponse))]
+        public async Task<IHttpActionResult> Suggest([FromUri]GetSuggestResultsQuery.GetSuggestResultsRequest request)
+            => Ok(await _mediator.SendAsync(request));
+
         [Route("upload")]        
         [HttpGet]
         [ResponseType(typeof(MergeOrUploadCommand.MergeOrUploadResponse))]
