@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { Http, Headers } from "@angular/http";
 import { Observable } from "rxjs";
 import { Storage, formEncode, OAuthHelper } from "./utilities";
+import { Video } from "../video";
 
 @Injectable()
 export class ApiService {
@@ -18,12 +19,9 @@ export class ApiService {
     }
 
     public getVideos() {
-        return this._http
+        return <Observable<Array<Video>>this._http
             .get(`${this._baseUrl}/api/video/get`)
-            .map(data => data.json())
-            .catch(err => {
-                return Observable.of(false);
-            }); 
+            .map(data => data.json());
     }
 
     public tryToLogin(options: { username: string, password: string }) {

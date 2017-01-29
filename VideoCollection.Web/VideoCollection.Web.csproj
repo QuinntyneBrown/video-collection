@@ -328,8 +328,12 @@
     <TypeScriptCompile Include="src\app\video\video-page.component.ts" />
     <TypeScriptCompile Include="src\app\video\index.ts" />
     <TypeScriptCompile Include="src\app\shared\utilities\index.ts" />
+    <TypeScriptCompile Include="src\app\video\video.model.ts" />
+    <TypeScriptCompile Include="src\app\shared\pagination\index.ts" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="src\app\shared\pagination\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
