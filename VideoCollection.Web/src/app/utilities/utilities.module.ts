@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
-import { ApiService } from "./api.service";
-import { AuthGuardService } from "./auth-guard.service";
+
+import { Storage } from './storage';
+import { OAuthHelper } from "./oauth-helper";
 
 const providers = [
-    ApiService,
-    AuthGuardService
+    OAuthHelper,
+    Storage
 ];
 
 @NgModule({
     imports: [CommonModule],
 	providers: providers
 })
-export class SharedModule { }
+export class UtilitiesModule { }

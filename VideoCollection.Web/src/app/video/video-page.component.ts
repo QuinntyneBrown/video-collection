@@ -32,6 +32,18 @@ export class VideoPageComponent implements OnInit {
             });
     }
 
+    //public seek: number = 0;
+    //public file: string = "https://www.youtube.com/watch?v=AslncyG8whg";
+    //public height: string = "420px";
+    //public width: string = "680px";
+    //public onPlayerEvent($event: any) {
+    //    switch ($event.type) {
+    //        case "ready":
+    //            break
+    //    }
+    //}
+
+
     public currentVideo: Video = <Video>{};
 
     public videos: Array<Video> = [];

@@ -7,3 +7,7 @@ import '@angular/router';
 import '@angular/forms';
 
 import 'rxjs';
+
+
+window["jwplayer"] = require("../libs/jwplayer");
+window["jwplayer"].key = "RQ+gASdSAzcEhqeSCgQ7M7hHOXdBC1Jdsl+PWg==";

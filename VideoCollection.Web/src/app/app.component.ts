@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy, Input, OnInit, ViewEncapsulation } from "@angular/core";
-
+import { Router } from "@angular/router";
+ 
 @Component({
     template: require("./app.component.html"),
     styles: [require("./app.component.scss")],
@@ -7,4 +8,8 @@ import { Component, ChangeDetectionStrategy, Input, OnInit, ViewEncapsulation } 
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None
 })
-export class AppComponent { }
+export class AppComponent {
+    constructor(
+        private _router: Router
+    ) { }
+}

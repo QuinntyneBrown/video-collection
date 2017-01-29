@@ -1,5 +1,3 @@
-export * from "./components";
-export * from "./guards";
-export * from "./utilities";
 export * from "./api.service";
+export * from "./auth-guard.service";
 export * from "./shared.module";
