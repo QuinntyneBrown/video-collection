@@ -1,4 +1,23 @@
 @import "../styles/breakpoints";
+@import "../styles/variables";
+
+body,html {
+    margin:0;
+    padding:0;
+}
+
+body {
+    font-size: $font-x-small;
+    font-family:Montserrat;
+    background-color:#fff;
+}
+
+h1 {
+    font-size:3.5em;
+    line-height:4em;
+    padding:0;
+    margin:0;
+}
 
 @media only screen and (min-width: $screen-sm-min) { 
 
