@@ -1,7 +1,7 @@
 ﻿import { Routes, RouterModule } from '@angular/router';
 import { LandingPageComponent } from "./landing";
 import { LoginPageComponent } from "./login";
-import { AdminPageComponent } from "./admin";
+import { AdminPageComponent, DigitalAssetUploadPageComponent } from "./admin";
 import { AboutPageComponent } from "./about";
 import { VideoPageComponent } from "./video";
 
@@ -17,6 +17,9 @@ export const routes: Routes = [
     {
         path: 'admin',
         component: AdminPageComponent,
+        children: [
+            { path: 'digital-asset/upload', component: DigitalAssetUploadPageComponent }
+        ]
     },
     {
         path: 'about',
@@ -34,6 +37,7 @@ export const RoutingModule = RouterModule.forRoot([
 
 export const routedComponents = [
     AdminPageComponent,
+    DigitalAssetUploadPageComponent,
     AboutPageComponent,
     LandingPageComponent,
     LoginPageComponent,

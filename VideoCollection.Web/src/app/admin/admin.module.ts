@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 
-import { AdminComponent } from './admin.component';
 
-const declarables = [AdminComponent];
+const declarables = [];
 const providers = [];
 
 @NgModule({

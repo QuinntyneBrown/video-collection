@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 
+import { DigitalAssetUploadComponent } from './digital-asset-upload.component';
 
-const declarables = [];
+const declarables = [DigitalAssetUploadComponent];
 const providers = [];
 
 @NgModule({
@@ -11,4 +12,4 @@ const providers = [];
     declarations: [declarables],
 	providers: providers
 })
-export class AdminRoutingModule { }
+export class SharedComponentsModule { }

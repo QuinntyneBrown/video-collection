@@ -211,6 +211,12 @@
     <Content Include="src\app\admin\admin-page.component.scss">
       <DependentUpon>admin-page.component.ts</DependentUpon>
     </Content>
+    <Content Include="src\app\admin\digital-assets\digital-asset-upload-page.component.html">
+      <DependentUpon>digital-asset-upload-page.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\admin\digital-assets\digital-asset-upload-page.component.scss">
+      <DependentUpon>digital-asset-upload-page.component.ts</DependentUpon>
+    </Content>
     <Content Include="src\app\admin\videos\video-edit-page.component.html">
       <DependentUpon>video-edit-page.component.ts</DependentUpon>
     </Content>
@@ -252,6 +258,12 @@
     </Content>
     <Content Include="src\app\search\search-page.component.scss">
       <DependentUpon>search-page.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\shared\components\digital-asset-upload.component.html">
+      <DependentUpon>digital-asset-upload.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\shared\components\digital-asset-upload.component.scss">
+      <DependentUpon>digital-asset-upload.component.ts</DependentUpon>
     </Content>
     <Content Include="src\app\video\jw-player-handler.component.html">
       <DependentUpon>jw-player-handler.component.ts</DependentUpon>
@@ -334,6 +346,12 @@
     <TypeScriptCompile Include="src\app\video\video.module.ts" />
     <TypeScriptCompile Include="src\app\login\login.module.ts" />
     <TypeScriptCompile Include="src\app\admin\admin.module.ts" />
+    <TypeScriptCompile Include="src\app\shared\components\shared-components.module.ts" />
+    <TypeScriptCompile Include="src\app\shared\components\index.ts" />
+    <TypeScriptCompile Include="src\app\shared\components\digital-asset-upload.component.ts" />
+    <TypeScriptCompile Include="src\app\admin\videos\index.ts" />
+    <TypeScriptCompile Include="src\app\admin\digital-assets\digital-asset-upload-page.component.ts" />
+    <TypeScriptCompile Include="src\app\admin\digital-assets\index.ts" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

@@ -1,5 +1,13 @@
 @import "../../styles/breakpoints";
 
+.landing-page {
+    text-align:center;
+    h2 {
+        font-size:6em;        
+        letter-spacing:3px;            
+    }
+    margin: 0% 4%;
+}
 
 @media only screen and (min-width: $screen-sm-min) { 
 

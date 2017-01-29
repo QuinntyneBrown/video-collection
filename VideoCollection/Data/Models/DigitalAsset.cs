@@ -13,7 +13,7 @@ namespace VideoCollection.Data.Models
         public long? Size { get; set; }
         public string ContentType { get; set; }
         public string RelativePath { get { return $"api/digitalasset/serve?uniqueid={UniqueId}"; } }
-        public Byte[] Bytes { get; set; } = new byte[0];
+        public byte[] Bytes { get; set; } = new byte[0];
         public Guid? UniqueId { get; set; } = Guid.NewGuid();
         public bool IsDeleted { get; set; }
     }
