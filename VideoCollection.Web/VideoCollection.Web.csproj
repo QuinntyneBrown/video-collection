@@ -6,8 +6,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
+    <ProductVersion></ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{658DA84D-AD6C-414A-9333-B89232911187}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -22,8 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
     <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
     <TypeScriptEmitDecoratorMetadata>true</TypeScriptEmitDecoratorMetadata>
     <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
@@ -200,6 +198,12 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include=".gitignore" />
+    <Content Include="src\app\about\about-page.component.html">
+      <DependentUpon>about-page.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\about\about-page.component.scss">
+      <DependentUpon>about-page.component.ts</DependentUpon>
+    </Content>
     <Content Include="src\app\admin\admin-page.component.html">
       <DependentUpon>admin-page.component.ts</DependentUpon>
     </Content>
@@ -242,6 +246,24 @@
     <Content Include="src\app\search\search-page.component.scss">
       <DependentUpon>search-page.component.ts</DependentUpon>
     </Content>
+    <Content Include="src\app\shared\components\app-header.component.html">
+      <DependentUpon>app-header.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\shared\components\app-header.component.scss">
+      <DependentUpon>app-header.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\shared\components\jw-player-handler.component.html">
+      <DependentUpon>jw-player-handler.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\shared\components\jw-player-handler.component.scss">
+      <DependentUpon>jw-player-handler.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\video\video-page.component.html">
+      <DependentUpon>video-page.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\video\video-page.component.scss">
+      <DependentUpon>video-page.component.ts</DependentUpon>
+    </Content>
     <Content Include="typings.json" />
     <Content Include="src\styles\_breakpoints.scss" />
     <Content Include="src\styles\_variables.scss" />
@@ -271,8 +293,15 @@
   <ItemGroup>
     <TypeScriptCompile Include="src\app\app-routing.module.ts" />
     <TypeScriptCompile Include="src\app\environment.ts" />
+    <TypeScriptCompile Include="src\app\login\current-user.service.ts" />
+    <TypeScriptCompile Include="src\app\login\login-redirect.service.ts" />
     <TypeScriptCompile Include="src\app\rxjs-extensions.ts" />
+    <TypeScriptCompile Include="src\app\shared\components\app-header.component.ts" />
     <TypeScriptCompile Include="src\app\shared\guards\auth-guard.service.ts" />
+    <TypeScriptCompile Include="src\app\shared\utilities\constants.ts" />
+    <TypeScriptCompile Include="src\app\shared\utilities\form-encode.ts" />
+    <TypeScriptCompile Include="src\app\shared\utilities\oauth-helper.ts" />
+    <TypeScriptCompile Include="src\app\shared\utilities\storage.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\polyfills.ts" />
     <TypeScriptCompile Include="src\vendor.ts" />
@@ -292,10 +321,15 @@
     <TypeScriptCompile Include="src\app\admin\videos\video-edit-page.component.ts" />
     <TypeScriptCompile Include="src\app\search\search-page.component.ts" />
     <TypeScriptCompile Include="src\app\search\index.ts" />
+    <TypeScriptCompile Include="src\app\about\about-page.component.ts" />
+    <TypeScriptCompile Include="src\app\about\index.ts" />
+    <TypeScriptCompile Include="src\app\shared\components\jw-player-handler.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\components\index.ts" />
+    <TypeScriptCompile Include="src\app\video\video-page.component.ts" />
+    <TypeScriptCompile Include="src\app\video\index.ts" />
+    <TypeScriptCompile Include="src\app\shared\utilities\index.ts" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\app\shared\components\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -314,8 +348,7 @@
           <IISUrl>http://localhost:56622/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
+          <CustomServerUrl></CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

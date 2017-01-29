@@ -1,0 +1,1 @@
+﻿export const storageKey = "[Video Collection App] Storage";

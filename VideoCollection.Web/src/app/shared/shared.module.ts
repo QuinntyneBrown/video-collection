@@ -5,7 +5,15 @@ import {
     AuthGuardService
 } from "./guards";
 
-const declarables = [];
+import {
+    AppHeaderComponent,
+    JwPlayerHandlerComponent
+} from "./components";
+
+const declarables = [
+    AppHeaderComponent,
+    JwPlayerHandlerComponent
+];
 
 const providers = [
     ApiService,

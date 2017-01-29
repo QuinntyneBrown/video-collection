@@ -258,7 +258,6 @@
     <Compile Include="Features\Users\RoleApiModel.cs" />
     <Compile Include="Features\Users\RoleController.cs" />
     <Compile Include="Features\Search\GetSearchResultsQuery.cs" />
-    <Compile Include="Features\Search\SearchResultApiModel.cs" />
     <Compile Include="Features\Search\SearchController.cs" />
     <Compile Include="Features\Search\SearchConfiguration.cs" />
     <Compile Include="Features\Search\ISearchConfiguration.cs" />

@@ -21,8 +21,7 @@ namespace VideoCollection.Features.Search
         {
             public MergeOrUploadHandler(VideoCollectionDataContext dataContext, ICache cache, ISearchConfiguration searchConfiguration)
             {
-                _dataContext = dataContext;
-                
+                _dataContext = dataContext;                
                 _searchIndexClient = new SearchIndexClient(
                     searchConfiguration.SearchServiceName,
                     searchConfiguration.IndexName,
@@ -35,6 +34,7 @@ namespace VideoCollection.Features.Search
                 document.Add("id", $"{video.Id}");
                 document.Add("name", video.Name);
                 document.Add("description", video.Description);
+                document.Add("abstract", video.Abstract);
                 document.Add("youTubeVideoId", video.YouTubeVideoId);
                 return document;
             }
@@ -52,7 +52,5 @@ namespace VideoCollection.Features.Search
             private readonly ICache _cache;
             private SearchIndexClient _searchIndexClient { get; set; }
         }
-
     }
-
 }

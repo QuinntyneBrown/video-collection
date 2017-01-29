@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from "@angular/core";
+import { ApiService } from "../shared";
 
 @Component({
     template: require("./login-page.component.html"),
@@ -8,6 +9,7 @@ import { Component, ChangeDetectionStrategy, Input } from "@angular/core";
 })
 export class LoginPageComponent {
     constructor(
+        private _apiService: ApiService
     ) { }
 
     public tryToLogin($event: { value: { username: string, password: string } }) {
