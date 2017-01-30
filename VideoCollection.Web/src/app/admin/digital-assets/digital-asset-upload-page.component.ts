@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input, OnInit } from "@angular/core";
+import { DigitalAssetService } from "./digital-asset.service";
 
 @Component({
     template: require("./digital-asset-upload-page.component.html"),
@@ -7,7 +8,20 @@ import { Component, ChangeDetectionStrategy, Input, OnInit } from "@angular/core
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DigitalAssetUploadPageComponent implements OnInit { 
+
+    constructor(private _digitalAssetService: DigitalAssetService) {
+
+    }
+
     ngOnInit() {
 
+    }
+
+
+    public tryToUpload($event: any) {
+        this._digitalAssetService.upload({ data: $event.files })
+            .subscribe(x => {
+
+            });
     }
 }

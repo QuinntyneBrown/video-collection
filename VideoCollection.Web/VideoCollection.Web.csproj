@@ -352,6 +352,8 @@
     <TypeScriptCompile Include="src\app\admin\videos\index.ts" />
     <TypeScriptCompile Include="src\app\admin\digital-assets\digital-asset-upload-page.component.ts" />
     <TypeScriptCompile Include="src\app\admin\digital-assets\index.ts" />
+    <TypeScriptCompile Include="src\app\admin\digital-assets\digital-asset.service.ts" />
+    <TypeScriptCompile Include="src\app\admin\digital-assets\digital-asset.module.ts" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

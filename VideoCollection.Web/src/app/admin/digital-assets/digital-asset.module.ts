@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
-import { DigitalAssetModule } from "./digital-assets";
+
+import { DigitalAssetService } from './digital-asset.service';
 
 const declarables = [];
-const providers = [];
+const providers = [DigitalAssetService];
 
 @NgModule({
-    imports: [CommonModule, DigitalAssetModule],
+    imports: [CommonModule],
     exports: [declarables],
     declarations: [declarables],
 	providers: providers
 })
-export class AdminModule { }
+export class DigitalAssetModule { }

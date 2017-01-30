@@ -13,6 +13,7 @@ import { RoutingModule, routedComponents } from "./app-routing.module";
 import { UtilitiesModule } from "./utilities";
 import { LoginModule } from "./login";
 import { VideoModule } from "./video";
+import { AdminModule } from "./admin";
 
 const declarables = [
     AppComponent,
@@ -23,6 +24,7 @@ const declarables = [
 
 @NgModule({
     imports: [
+        AdminModule,
         UtilitiesModule,
         SharedModule,
         RoutingModule,

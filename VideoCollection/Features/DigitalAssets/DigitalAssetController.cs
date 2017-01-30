@@ -1,7 +1,10 @@
 using MediatR;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using VideoCollection.Features.DigitalAssets.UploadHandlers;
 
 namespace VideoCollection.Features.DigitalAssets
 {
@@ -44,6 +47,18 @@ namespace VideoCollection.Features.DigitalAssets
         [ResponseType(typeof(RemoveDigitalAssetCommand.RemoveDigitalAssetResponse))]
         public async Task<IHttpActionResult> Remove([FromUri]RemoveDigitalAssetCommand.RemoveDigitalAssetRequest request)
             => Ok(await _mediator.SendAsync(request));
+
+        [AllowAnonymous]
+        [Route("upload")]
+        [HttpPost]
+        public async Task<IHttpActionResult> Upload(HttpRequestMessage request)
+        {
+            if (!Request.Content.IsMimeMultipartContent("form-data"))
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            var provider = await Request.Content.ReadAsMultipartAsync(new InMemoryMultipartFormDataStreamProvider());
+            var response = await _mediator.SendAsync(new UploadDigitalAssetCommand.UploadDigitalAssetRequest() { Provider = provider });
+            return Ok(response);
+        }
 
         protected readonly IMediator _mediator;
 
