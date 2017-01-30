@@ -1,5 +1,4 @@
 ﻿using System;
-using Microsoft.Practices.Unity;
 using StackExchange.Redis;
 using Newtonsoft.Json;
 using VideoCollection.Data.Models;
@@ -9,19 +8,21 @@ namespace VideoCollection.Utilities
 {
     public class RedisCache : Cache
     {
-        RedisCache()
+        public RedisCache(IRedisCacheConfiguration redisConfiguration)
         {
-            var connection = ConnectionMultiplexer.Connect(_redisCacheConfiguration.ConnectionString);
-            _database = connection.GetDatabase();
+            _connection = ConnectionMultiplexer.Connect(_redisCacheConfiguration.ConnectionString);
+            _database = _connection.GetDatabase();
         }
 
-        private static volatile VideoCollection.Utilities.RedisCache _current = null;
+        public RedisCache()
+            :this(RedisCacheConfiguration.Config) { }
 
+        private static volatile VideoCollection.Utilities.RedisCache _current = null;
         
         private IDatabase _database { get; set; }
-
-        [Dependency]
-        public IRedisCacheConfiguration _redisCacheConfiguration { get { return RedisCacheConfiguration.Config; } }
+        private ConnectionMultiplexer _connection { get; set; }
+        
+        public IRedisCacheConfiguration _redisCacheConfiguration { get; set; }
 
         public static RedisCache Current
         {
@@ -43,18 +44,19 @@ namespace VideoCollection.Utilities
 
         public override void Add<T>(object objectToCache, string key, double cacheDuration)
         {
-            throw new NotImplementedException();
+            _database.StringSet(key, JsonConvert.SerializeObject(objectToCache), TimeSpan.FromMinutes(cacheDuration));
         }
 
         public override void ClearAll()
         {
-            throw new NotImplementedException();
+            foreach (var endpoint in _connection.GetEndPoints())
+            {
+                var server = _connection.GetServer(endpoint);
+                server.FlushAllDatabases();
+            }
         }
 
-        public override bool Exists(string key)
-        {
-            throw new NotImplementedException();
-        }
+        public override bool Exists(string key) => _database.StringGet(key).HasValue;
 
         public override T Get<T>(string key)
         {
@@ -78,7 +80,7 @@ namespace VideoCollection.Utilities
 
         public override void Remove(string key)
         {
-            throw new NotImplementedException();
+            Add(null, key);
         }
     }
 }
