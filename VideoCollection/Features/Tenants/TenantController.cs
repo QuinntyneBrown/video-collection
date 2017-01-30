@@ -18,32 +18,32 @@ namespace VideoCollection.Features.Tenants
         [HttpPost]
         [ResponseType(typeof(AddOrUpdateTenantCommand.AddOrUpdateTenantResponse))]
         public async Task<IHttpActionResult> Add(AddOrUpdateTenantCommand.AddOrUpdateTenantRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
 
         [Route("update")]
         [HttpPut]
         [ResponseType(typeof(AddOrUpdateTenantCommand.AddOrUpdateTenantResponse))]
         public async Task<IHttpActionResult> Update(AddOrUpdateTenantCommand.AddOrUpdateTenantRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
         
         [Route("get")]
         [AllowAnonymous]
         [HttpGet]
         [ResponseType(typeof(GetTenantsQuery.GetTenantsResponse))]
         public async Task<IHttpActionResult> Get()
-            => Ok(await _mediator.SendAsync(new GetTenantsQuery.GetTenantsRequest()));
+            => Ok(await _mediator.Send(new GetTenantsQuery.GetTenantsRequest()));
 
         [Route("getById")]
         [HttpGet]
         [ResponseType(typeof(GetTenantByIdQuery.GetTenantByIdResponse))]
         public async Task<IHttpActionResult> GetById([FromUri]GetTenantByIdQuery.GetTenantByIdRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
 
         [Route("remove")]
         [HttpDelete]
         [ResponseType(typeof(RemoveTenantCommand.RemoveTenantResponse))]
         public async Task<IHttpActionResult> Remove([FromUri]RemoveTenantCommand.RemoveTenantRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
 
         protected readonly IMediator _mediator;
 

@@ -21,32 +21,32 @@ namespace VideoCollection.Features.DigitalAssets
         [HttpPost]
         [ResponseType(typeof(AddOrUpdateDigitalAssetCommand.AddOrUpdateDigitalAssetResponse))]
         public async Task<IHttpActionResult> Add(AddOrUpdateDigitalAssetCommand.AddOrUpdateDigitalAssetRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
 
         [Route("update")]
         [HttpPut]
         [ResponseType(typeof(AddOrUpdateDigitalAssetCommand.AddOrUpdateDigitalAssetResponse))]
         public async Task<IHttpActionResult> Update(AddOrUpdateDigitalAssetCommand.AddOrUpdateDigitalAssetRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
         
         [Route("get")]
         [AllowAnonymous]
         [HttpGet]
         [ResponseType(typeof(GetDigitalAssetsQuery.GetDigitalAssetsResponse))]
         public async Task<IHttpActionResult> Get()
-            => Ok(await _mediator.SendAsync(new GetDigitalAssetsQuery.GetDigitalAssetsRequest()));
+            => Ok(await _mediator.Send(new GetDigitalAssetsQuery.GetDigitalAssetsRequest()));
 
         [Route("getById")]
         [HttpGet]
         [ResponseType(typeof(GetDigitalAssetByIdQuery.GetDigitalAssetByIdResponse))]
         public async Task<IHttpActionResult> GetById([FromUri]GetDigitalAssetByIdQuery.GetDigitalAssetByIdRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
 
         [Route("remove")]
         [HttpDelete]
         [ResponseType(typeof(RemoveDigitalAssetCommand.RemoveDigitalAssetResponse))]
         public async Task<IHttpActionResult> Remove([FromUri]RemoveDigitalAssetCommand.RemoveDigitalAssetRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
 
         [AllowAnonymous]
         [Route("upload")]
@@ -56,7 +56,7 @@ namespace VideoCollection.Features.DigitalAssets
             if (!Request.Content.IsMimeMultipartContent("form-data"))
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
             var provider = await Request.Content.ReadAsMultipartAsync(new InMemoryMultipartFormDataStreamProvider());            
-            return Ok(await _mediator.SendAsync(new UploadDigitalAssetCommand.UploadDigitalAssetRequest() { Provider = provider }));
+            return Ok(await _mediator.Send(new UploadDigitalAssetCommand.UploadDigitalAssetRequest() { Provider = provider }));
         }
 
         protected readonly IMediator _mediator;

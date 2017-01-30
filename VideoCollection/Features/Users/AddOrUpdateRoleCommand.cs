@@ -11,7 +11,7 @@ namespace VideoCollection.Features.Users
 {
     public class AddOrUpdateRoleCommand
     {
-        public class AddOrUpdateRoleRequest : IAsyncRequest<AddOrUpdateRoleResponse>
+        public class AddOrUpdateRoleRequest : IRequest<AddOrUpdateRoleResponse>
         {
             public RoleApiModel Role { get; set; }
         }

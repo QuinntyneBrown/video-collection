@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace VideoCollection.Data.Models
@@ -12,6 +13,8 @@ namespace VideoCollection.Data.Models
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string Fullname { get { return $"{Firstname} {Lastname}"; } }
+        public DateTime CreatedOn { get; set; }
+        public string CreatedBy { get; set; }
         public bool IsDeleted { get; set; }
 
         public ICollection<Role> Roles { get; set; } = new HashSet<Role>();

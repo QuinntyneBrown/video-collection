@@ -1,21 +1,17 @@
 ﻿using System;
 using StackExchange.Redis;
 using Newtonsoft.Json;
-using VideoCollection.Data.Models;
-using System.Collections.Generic;
 
 namespace VideoCollection.Utilities
 {
     public class RedisCache : Cache
     {
-        public RedisCache(IRedisCacheConfiguration redisConfiguration)
+        public RedisCache()
         {
+            _redisCacheConfiguration = RedisCacheConfiguration.Config;
             _connection = ConnectionMultiplexer.Connect(_redisCacheConfiguration.ConnectionString);
             _database = _connection.GetDatabase();
         }
-
-        public RedisCache()
-            :this(RedisCacheConfiguration.Config) { }
 
         private static volatile VideoCollection.Utilities.RedisCache _current = null;
         
@@ -56,7 +52,7 @@ namespace VideoCollection.Utilities
             }
         }
 
-        public override bool Exists(string key) => _database.StringGet(key).HasValue;
+        public override bool Exists(string key) => _database.KeyExists(key);
 
         public override T Get<T>(string key)
         {
@@ -75,7 +71,7 @@ namespace VideoCollection.Utilities
             if (redisValue.IsNull)
                 return null;
 
-            return JsonConvert.DeserializeObject<List<DigitalAsset>>(redisValue);
+            return JsonConvert.DeserializeObject(redisValue);
         }
 
         public override void Remove(string key)

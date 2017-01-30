@@ -11,15 +11,12 @@ namespace VideoCollection.Features.DigitalAssets
 {
     public class AddOrUpdateDigitalAssetCommand
     {
-        public class AddOrUpdateDigitalAssetRequest : IAsyncRequest<AddOrUpdateDigitalAssetResponse>
+        public class AddOrUpdateDigitalAssetRequest : IRequest<AddOrUpdateDigitalAssetResponse>
         {
             public DigitalAssetApiModel DigitalAsset { get; set; }
         }
 
-        public class AddOrUpdateDigitalAssetResponse
-        {
-
-        }
+        public class AddOrUpdateDigitalAssetResponse { }
 
         public class AddOrUpdateDigitalAssetHandler : IAsyncRequestHandler<AddOrUpdateDigitalAssetRequest, AddOrUpdateDigitalAssetResponse>
         {

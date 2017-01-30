@@ -11,7 +11,7 @@ namespace VideoCollection.Features.DigitalAssets
 {
     public class RemoveDigitalAssetCommand
     {
-        public class RemoveDigitalAssetRequest : IAsyncRequest<RemoveDigitalAssetResponse>
+        public class RemoveDigitalAssetRequest : IRequest<RemoveDigitalAssetResponse>
         {
             public int Id { get; set; }
         }

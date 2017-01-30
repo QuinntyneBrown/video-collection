@@ -1,11 +1,6 @@
 using MediatR;
-using VideoCollection.Data;
-using VideoCollection.Utilities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Linq;
-using System.Data.Entity;
-using System;
 using Microsoft.Azure.Search.Models;
 using Microsoft.Azure.Search;
 
@@ -13,7 +8,7 @@ namespace VideoCollection.Features.Search
 {
     public class GetSearchResultsQuery
     {
-        public class GetSearchResultsRequest : IAsyncRequest<GetSearchResultsResponse> {
+        public class GetSearchResultsRequest : IRequest<GetSearchResultsResponse> {
             public string Query { get; set; }
             public int? Top { get; set; }
             public int? Skip { get; set; }

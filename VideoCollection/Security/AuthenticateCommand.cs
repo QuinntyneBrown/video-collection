@@ -13,7 +13,7 @@ namespace VideoCollection.Security
 {
     public class AuthenticateCommand
     {
-        public class AuthenticateRequest : IAsyncRequest<AuthenticateResponse>
+        public class AuthenticateRequest : IRequest<AuthenticateResponse>
         {
             public string Username { get; set; }
             public string Password { get; set; }

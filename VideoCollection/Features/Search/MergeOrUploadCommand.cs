@@ -13,7 +13,7 @@ namespace VideoCollection.Features.Search
 {
     public class MergeOrUploadCommand
     {
-        public class MergeOrUploadRequest : IAsyncRequest<MergeOrUploadResponse> { }
+        public class MergeOrUploadRequest : IRequest<MergeOrUploadResponse> { }
 
         public class MergeOrUploadResponse { }
 

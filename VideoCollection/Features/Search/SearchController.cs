@@ -19,20 +19,20 @@ namespace VideoCollection.Features.Search
         [HttpGet]
         [ResponseType(typeof(GetSearchResultsQuery.GetSearchResultsResponse))]
         public async Task<IHttpActionResult> Get([FromUri]GetSearchResultsQuery.GetSearchResultsRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
 
         [Route("suggest")]
         [AllowAnonymous]
         [HttpGet]
         [ResponseType(typeof(GetSuggestResultsQuery.GetSuggestResultsResponse))]
         public async Task<IHttpActionResult> Suggest([FromUri]GetSuggestResultsQuery.GetSuggestResultsRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
 
         [Route("upload")]        
         [HttpGet]
         [ResponseType(typeof(MergeOrUploadCommand.MergeOrUploadResponse))]
         public async Task<IHttpActionResult> Upload([FromUri]MergeOrUploadCommand.MergeOrUploadRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
 
         protected readonly IMediator _mediator;
 

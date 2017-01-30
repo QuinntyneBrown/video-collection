@@ -10,7 +10,7 @@ namespace VideoCollection.Features.Videos
 {
     public class GetVideoByIdQuery
     {
-        public class GetVideoByIdRequest : IAsyncRequest<GetVideoByIdResponse> { 
+        public class GetVideoByIdRequest : IRequest<GetVideoByIdResponse> { 
 			public int Id { get; set; }
 		}
 

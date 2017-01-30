@@ -11,7 +11,7 @@ namespace VideoCollection.Security
 {
     public class GetClaimsForUserQuery
     {
-        public class GetClaimsForUserRequest : IAsyncRequest<GetClaimsForUserResponse>
+        public class GetClaimsForUserRequest : IRequest<GetClaimsForUserResponse>
         {
             public string Username { get; set; }
         }

@@ -11,7 +11,7 @@ namespace VideoCollection.Features.Tenants
 {
     public class RemoveTenantCommand
     {
-        public class RemoveTenantRequest : IAsyncRequest<RemoveTenantResponse>
+        public class RemoveTenantRequest : IRequest<RemoveTenantResponse>
         {
             public int Id { get; set; }
         }

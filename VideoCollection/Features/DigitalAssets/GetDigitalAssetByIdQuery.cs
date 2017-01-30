@@ -10,7 +10,7 @@ namespace VideoCollection.Features.DigitalAssets
 {
     public class GetDigitalAssetByIdQuery
     {
-        public class GetDigitalAssetByIdRequest : IAsyncRequest<GetDigitalAssetByIdResponse> { 
+        public class GetDigitalAssetByIdRequest : IRequest<GetDigitalAssetByIdResponse> { 
 			public int Id { get; set; }
 		}
 

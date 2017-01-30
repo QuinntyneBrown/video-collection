@@ -18,32 +18,32 @@ namespace VideoCollection.Features.Users
         [HttpPost]
         [ResponseType(typeof(AddOrUpdateRoleCommand.AddOrUpdateRoleResponse))]
         public async Task<IHttpActionResult> Add(AddOrUpdateRoleCommand.AddOrUpdateRoleRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
 
         [Route("update")]
         [HttpPut]
         [ResponseType(typeof(AddOrUpdateRoleCommand.AddOrUpdateRoleResponse))]
         public async Task<IHttpActionResult> Update(AddOrUpdateRoleCommand.AddOrUpdateRoleRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
         
         [Route("get")]
         [AllowAnonymous]
         [HttpGet]
         [ResponseType(typeof(GetRolesQuery.GetRolesResponse))]
         public async Task<IHttpActionResult> Get()
-            => Ok(await _mediator.SendAsync(new GetRolesQuery.GetRolesRequest()));
+            => Ok(await _mediator.Send(new GetRolesQuery.GetRolesRequest()));
 
         [Route("getById")]
         [HttpGet]
         [ResponseType(typeof(GetRoleByIdQuery.GetRoleByIdResponse))]
         public async Task<IHttpActionResult> GetById([FromUri]GetRoleByIdQuery.GetRoleByIdRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
 
         [Route("remove")]
         [HttpDelete]
         [ResponseType(typeof(RemoveRoleCommand.RemoveRoleResponse))]
         public async Task<IHttpActionResult> Remove([FromUri]RemoveRoleCommand.RemoveRoleRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
 
         protected readonly IMediator _mediator;
 

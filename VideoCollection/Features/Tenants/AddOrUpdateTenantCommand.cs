@@ -11,7 +11,7 @@ namespace VideoCollection.Features.Tenants
 {
     public class AddOrUpdateTenantCommand
     {
-        public class AddOrUpdateTenantRequest : IAsyncRequest<AddOrUpdateTenantResponse>
+        public class AddOrUpdateTenantRequest : IRequest<AddOrUpdateTenantResponse>
         {
             public TenantApiModel Tenant { get; set; }
         }

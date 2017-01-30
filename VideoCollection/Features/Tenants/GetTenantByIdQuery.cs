@@ -10,7 +10,7 @@ namespace VideoCollection.Features.Tenants
 {
     public class GetTenantByIdQuery
     {
-        public class GetTenantByIdRequest : IAsyncRequest<GetTenantByIdResponse> { 
+        public class GetTenantByIdRequest : IRequest<GetTenantByIdResponse> { 
 			public int Id { get; set; }
 		}
 

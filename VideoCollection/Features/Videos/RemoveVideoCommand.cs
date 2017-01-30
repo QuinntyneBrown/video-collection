@@ -11,7 +11,7 @@ namespace VideoCollection.Features.Videos
 {
     public class RemoveVideoCommand
     {
-        public class RemoveVideoRequest : IAsyncRequest<RemoveVideoResponse>
+        public class RemoveVideoRequest : IRequest<RemoveVideoResponse>
         {
             public int Id { get; set; }
         }

@@ -21,39 +21,39 @@ namespace VideoCollection.Features.Videos
         [HttpPost]
         [ResponseType(typeof(AddOrUpdateVideoResponse))]
         public async Task<IHttpActionResult> Add(AddOrUpdateVideoRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
 
         [Route("update")]
         [HttpPut]
         [ResponseType(typeof(AddOrUpdateVideoResponse))]
         public async Task<IHttpActionResult> Update(AddOrUpdateVideoRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
         
         [Route("get")]
         [AllowAnonymous]
         [HttpGet]
         [ResponseType(typeof(GetVideosQuery.GetVideosResponse))]
         public async Task<IHttpActionResult> Get()
-            => Ok(await _mediator.SendAsync(new GetVideosQuery.GetVideosRequest()));
+            => Ok(await _mediator.Send(new GetVideosQuery.GetVideosRequest()));
 
         [Route("getbyid")]
         [HttpGet]
         [ResponseType(typeof(GetVideoByIdResponse))]
         public async Task<IHttpActionResult> GetById([FromUri]GetVideoByIdRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
 
         [AllowAnonymous]
         [Route("getbyslug")]
         [HttpGet]
         [ResponseType(typeof(GetVideoBySlugQuery.GetVideoBySlugResponse))]
         public async Task<IHttpActionResult> GetBySlug([FromUri]GetVideoBySlugQuery.GetVideoBySlugRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
 
         [Route("remove")]
         [HttpDelete]
         [ResponseType(typeof(RemoveVideoResponse))]
         public async Task<IHttpActionResult> Remove([FromUri]RemoveVideoRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
 
         protected readonly IMediator _mediator;
 

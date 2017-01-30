@@ -16,10 +16,8 @@ export class DigitalAssetListPageComponent implements OnInit {
     ngOnInit() {
         this._digitalAssetService
             .get()
-            .subscribe((digitalAssets:any) => {
-                this._digitalAssets = digitalAssets;
-            });
+            .subscribe((response: any) => { this.digitalAssets = response.digitalAssets; });
     }    
 
-    private _digitalAssets: Array<any> = [];
+    public digitalAssets: Array<any> = [];
 }

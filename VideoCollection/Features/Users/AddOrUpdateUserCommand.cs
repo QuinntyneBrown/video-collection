@@ -11,7 +11,7 @@ namespace VideoCollection.Features.Users
 {
     public class AddOrUpdateUserCommand
     {
-        public class AddOrUpdateUserRequest : IAsyncRequest<AddOrUpdateUserResponse>
+        public class AddOrUpdateUserRequest : IRequest<AddOrUpdateUserResponse>
         {
             public UserApiModel User { get; set; }
         }

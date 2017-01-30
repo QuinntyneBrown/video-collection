@@ -12,7 +12,7 @@ namespace VideoCollection.Filters
 
         public override void OnException(HttpActionExecutedContext context)
         {
-
+            
         }
 
         protected readonly ILogger _logger;

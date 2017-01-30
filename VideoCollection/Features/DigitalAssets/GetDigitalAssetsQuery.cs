@@ -12,7 +12,7 @@ namespace VideoCollection.Features.DigitalAssets
 {
     public class GetDigitalAssetsQuery
     {
-        public class GetDigitalAssetsRequest : IAsyncRequest<GetDigitalAssetsResponse> { }
+        public class GetDigitalAssetsRequest : IRequest<GetDigitalAssetsResponse> { }
 
         public class GetDigitalAssetsResponse
         {

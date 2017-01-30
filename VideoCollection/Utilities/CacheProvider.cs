@@ -10,7 +10,7 @@ namespace VideoCollection.Utilities
     {
         public ICache GetCache()
         {
-            return MemoryCache.Current;
+            return RedisCache.Current;
         }
     }
 }

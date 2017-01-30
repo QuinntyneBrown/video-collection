@@ -1,21 +1,9 @@
 using Microsoft.Practices.Unity;
 using VideoCollection.Security;
 using MediatR;
-
-using static VideoCollection.Security.AuthenticateCommand;
-using static VideoCollection.Security.GetClaimsForUserQuery;
-
-using static VideoCollection.Features.DigitalAssets.UploadDigitalAssetCommand;
-using static VideoCollection.Features.DigitalAssets.GetDigitalAssetsQuery;
-using static VideoCollection.Features.DigitalAssets.GetDigitalAssetByIdQuery;
-using static VideoCollection.Features.DigitalAssets.RemoveDigitalAssetCommand;
-
-using static VideoCollection.Features.Videos.AddOrUpdateVideoCommand;
-using static VideoCollection.Features.Videos.GetVideosQuery;
-using static VideoCollection.Features.Videos.GetVideoBySlugQuery;
-using static VideoCollection.Features.Videos.GetVideoByIdQuery;
-using static VideoCollection.Features.Videos.RemoveVideoCommand;
 using VideoCollection.Utilities;
+using System;
+using System.Linq;
 
 namespace VideoCollection
 {
@@ -25,26 +13,33 @@ namespace VideoCollection
         {
             var container = new UnityContainer();
 
-            container.RegisterType<IAsyncRequestHandler<AuthenticateRequest, AuthenticateResponse>, AuthenticateHandler>();
-            container.RegisterType<IAsyncRequestHandler<GetClaimsForUserRequest, GetClaimsForUserResponse>, GetClaimsForUserHandler>();
-
-            container.RegisterType<IAsyncRequestHandler<UploadDigitalAssetRequest, UploadDigitalAssetResponse>, UploadDigitalAssetHandler>();
-            container.RegisterType<IAsyncRequestHandler<GetDigitalAssetsRequest, GetDigitalAssetsResponse>, GetDigitalAssetsHandler>();
-            container.RegisterType<IAsyncRequestHandler<GetDigitalAssetByIdRequest, GetDigitalAssetByIdResponse>, GetDigitalAssetByIdHandler>();
-            container.RegisterType<IAsyncRequestHandler<RemoveDigitalAssetRequest, RemoveDigitalAssetResponse>, RemoveDigitalAssetHandler>();
-
-
-            container.RegisterInstance<ICache>(VideoCollection.Utilities.RedisCache.Current);
-
-            container.RegisterTypes(AllClasses.FromAssemblies(typeof(UnityConfiguration).Assembly),WithMappings.FromMatchingInterface,WithName.Default);
             container.RegisterType<IMediator, Mediator>();
-            container.RegisterInstance<SingleInstanceFactory>(t => container.Resolve(t));
+
+            var classes = AllClasses.FromAssemblies(typeof(UnityConfiguration).Assembly)
+                .Where(x=>x.Name.Contains("Controller") == false)
+                .ToList();
+
+            container.RegisterTypes(classes, WithMappings.FromAllInterfaces, GetName, GetLifetimeManager);
+            container.RegisterInstance<SingleInstanceFactory>(t => container.IsRegistered(t) ? container.Resolve(t) : null);
             container.RegisterInstance<MultiInstanceFactory>(t => container.ResolveAll(t));            
             container.RegisterInstance(AuthConfiguration.LazyConfig);
-
-
-                    
+            container.RegisterInstance(RedisCacheConfiguration.Config);            
             return container;
+        }
+
+        static bool IsNotificationHandler(Type type)
+        {
+            return type.GetInterfaces().Any(x => x.IsGenericType && (x.GetGenericTypeDefinition() == typeof(INotificationHandler<>) || x.GetGenericTypeDefinition() == typeof(IAsyncNotificationHandler<>)));
+        }
+
+        static LifetimeManager GetLifetimeManager(Type type)
+        {
+            return IsNotificationHandler(type) ? new ContainerControlledLifetimeManager() : null;
+        }
+
+        static string GetName(Type type)
+        {
+            return IsNotificationHandler(type) ? string.Format("HandlerFor" + type.Name) : string.Empty;
         }
     }
 }

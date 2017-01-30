@@ -2,7 +2,7 @@ using System;
 
 namespace VideoCollection.Data.Models
 {
-    public class PlaylistItem
+    public class PlaylistItem: ILoggable
     {
         public int Id { get; set; }
         public string Name { get; set; }

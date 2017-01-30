@@ -8,7 +8,7 @@ namespace VideoCollection.Features.Search
 {
     public class GetSuggestResultsQuery
     {
-        public class GetSuggestResultsRequest : IAsyncRequest<GetSuggestResultsResponse> {
+        public class GetSuggestResultsRequest : IRequest<GetSuggestResultsResponse> {
             public string Query { get; set; }
         }
 

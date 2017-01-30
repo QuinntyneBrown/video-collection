@@ -11,7 +11,7 @@ namespace VideoCollection.Features.Users
 {
     public class RemoveRoleCommand
     {
-        public class RemoveRoleRequest : IAsyncRequest<RemoveRoleResponse>
+        public class RemoveRoleRequest : IRequest<RemoveRoleResponse>
         {
             public int Id { get; set; }
         }

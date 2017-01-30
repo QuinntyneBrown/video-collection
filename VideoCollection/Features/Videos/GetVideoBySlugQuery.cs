@@ -10,7 +10,7 @@ namespace VideoCollection.Features.Videos
 {
     public class GetVideoBySlugQuery
     {
-        public class GetVideoBySlugRequest : IAsyncRequest<GetVideoBySlugResponse>
+        public class GetVideoBySlugRequest : IRequest<GetVideoBySlugResponse>
         {
             public string Slug { get; set; }
         }

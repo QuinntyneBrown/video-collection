@@ -11,7 +11,7 @@ namespace VideoCollection.Features.Videos
 {
     public class AddOrUpdateVideoCommand
     {
-        public class AddOrUpdateVideoRequest : IAsyncRequest<AddOrUpdateVideoResponse>
+        public class AddOrUpdateVideoRequest : IRequest<AddOrUpdateVideoResponse>
         {
             public VideoApiModel Video { get; set; }
         }

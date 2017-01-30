@@ -10,7 +10,7 @@ namespace VideoCollection.Features.Users
 {
     public class GetRolesQuery
     {
-        public class GetRolesRequest : IAsyncRequest<GetRolesResponse> { }
+        public class GetRolesRequest : IRequest<GetRolesResponse> { }
 
         public class GetRolesResponse
         {
