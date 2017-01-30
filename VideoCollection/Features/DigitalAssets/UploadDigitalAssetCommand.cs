@@ -8,6 +8,8 @@ using System.Collections.Specialized;
 using System.Net.Http;
 using System.IO;
 using VideoCollection.Data.Models;
+using VideoCollection.Utilities;
+using static VideoCollection.Features.DigitalAssets.Constants;
 
 namespace VideoCollection.Features.DigitalAssets
 {
@@ -25,9 +27,10 @@ namespace VideoCollection.Features.DigitalAssets
 
         public class UploadDigitalAssetHandler : IAsyncRequestHandler<UploadDigitalAssetRequest, UploadDigitalAssetResponse>
         {
-            public UploadDigitalAssetHandler(VideoCollectionDataContext dataContext)
+            public UploadDigitalAssetHandler(VideoCollectionDataContext dataContext, ICache cache)
             {
                 _dataContext = dataContext;
+                _cache = cache;
             }
 
             public async Task<UploadDigitalAssetResponse> Handle(UploadDigitalAssetRequest request)
@@ -50,6 +53,9 @@ namespace VideoCollection.Features.DigitalAssets
                 }
 
                 _dataContext.SaveChanges();
+
+                _cache.Add(null, DigitalAssetCacheKeys.DigitalAssets);
+
                 return new UploadDigitalAssetResponse()
                 {
                     DigitalAssets = digitalAssets.Select(x => DigitalAssetApiModel.FromDigitalAsset(x)).ToList()
@@ -57,6 +63,7 @@ namespace VideoCollection.Features.DigitalAssets
             }
 
             private readonly VideoCollectionDataContext _dataContext;
+            private readonly ICache _cache;
             
         }
 

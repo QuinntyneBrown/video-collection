@@ -199,6 +199,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiConfiguration.cs" />
+    <Compile Include="Features\DigitalAssets\Constants.cs" />
     <Compile Include="Features\DigitalAssets\UploadDigitalAssetCommand.cs" />
     <Compile Include="Features\Search\GetSuggestResultsQuery.cs" />
     <Compile Include="Features\Videos\GetVideoBySlugQuery.cs" />
