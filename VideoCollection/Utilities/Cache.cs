@@ -49,7 +49,7 @@ namespace VideoCollection.Utilities
 
         public async Task<TResponse> FromCacheOrServiceAsync<TResponse>(Func<Task<TResponse>> action, string key)
         {
-            var cached = Get(key);
+            var cached = Get<TResponse>(key);
             if (cached == null)
             {
                 cached = await action();

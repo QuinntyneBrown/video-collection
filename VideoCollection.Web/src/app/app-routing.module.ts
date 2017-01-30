@@ -1,7 +1,15 @@
 ﻿import { Routes, RouterModule } from '@angular/router';
 import { LandingPageComponent } from "./landing";
 import { LoginPageComponent } from "./login";
-import { AdminPageComponent, DigitalAssetUploadPageComponent } from "./admin";
+import {
+    AdminPageComponent,
+    DigitalAssetUploadPageComponent,
+    DigitalAssetEditPageComponent,
+    DigitalAssetListPageComponent,
+
+    VideoEditPageComponent,
+    VideoListPageComponent
+} from "./admin";
 import { AboutPageComponent } from "./about";
 import { VideoPageComponent } from "./video";
 
@@ -18,7 +26,13 @@ export const routes: Routes = [
         path: 'admin',
         component: AdminPageComponent,
         children: [
-            { path: 'digital-asset/upload', component: DigitalAssetUploadPageComponent }
+            { path: 'digital-asset/upload', component: DigitalAssetUploadPageComponent },
+            { path: 'digital-asset/list', component: DigitalAssetListPageComponent },
+            { path: 'digital-asset/edit/:id', component: DigitalAssetEditPageComponent },
+
+            { path: 'video/create', component:  VideoEditPageComponent},
+            { path: 'video/list', component: VideoListPageComponent },
+            { path: 'video/edit/:id', component: VideoEditPageComponent}
         ]
     },
     {
@@ -37,7 +51,14 @@ export const RoutingModule = RouterModule.forRoot([
 
 export const routedComponents = [
     AdminPageComponent,
+
     DigitalAssetUploadPageComponent,
+    DigitalAssetEditPageComponent,
+    DigitalAssetListPageComponent,
+
+    VideoEditPageComponent,
+    VideoListPageComponent,
+
     AboutPageComponent,
     LandingPageComponent,
     LoginPageComponent,

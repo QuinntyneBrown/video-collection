@@ -277,12 +277,13 @@
     <Compile Include="Features\DigitalAssets\UploadHandlers\StreamHelper.cs" />
     <Compile Include="Features\DigitalAssets\UploadHandlers\FileMultipartFormDataStreamProvider.cs" />
     <Compile Include="Features\DigitalAssets\UploadHandlers\InMemoryMultipartFormDataStreamProvider.cs" />
+    <Compile Include="Utilities\RedisCacheConfiguration.cs" />
+    <Compile Include="Utilities\IRedisCacheConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

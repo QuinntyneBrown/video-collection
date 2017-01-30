@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy, Input, OnInit } from "@angular/core";
 import { Router } from "@angular/router";   
+import { VideoService } from "./video.service";
 
 @Component({
     template: require("./video-list-page.component.html"),
@@ -8,7 +9,9 @@ import { Router } from "@angular/router";
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VideoListPageComponent implements OnInit {
-    constructor() {
+    constructor(
+        private _videoService: VideoService
+    ) {
 
     }
 

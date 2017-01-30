@@ -6,14 +6,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion></ProductVersion>
+    <ProductVersion>
+    </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{658DA84D-AD6C-414A-9333-B89232911187}</ProjectGuid>
+    <ProjectGuid>{A8706E50-FA67-4048-9247-DFBBB6BC8071}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VideoCollection.Web</RootNamespace>
-    <AssemblyName>VideoCollection.Web</AssemblyName>
+    <RootNamespace>VideoCollection.Api</RootNamespace>
+    <AssemblyName>VideoCollection.Api</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -21,13 +22,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
-    <TypeScriptEmitDecoratorMetadata>true</TypeScriptEmitDecoratorMetadata>
-    <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
-    <TypeScriptExperimentalDecorators>True</TypeScriptExperimentalDecorators>
-    <TypeScritModuleResolution>Classic</TypeScritModuleResolution>
-    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,12 +55,20 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MediatR, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MediatR.2.1.0\lib\net45\MediatR.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Search, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.Search.3.0.2\lib\net45\Microsoft.Azure.Search.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -120,6 +124,18 @@
       <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.2.3.4\lib\net45\Microsoft.Rest.ClientRuntime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime.Azure, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.Azure.3.3.4\lib\net45\Microsoft.Rest.ClientRuntime.Azure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Spatial, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Spatial.6.15.0\lib\portable-net45+win+wpa81\Microsoft.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
@@ -132,20 +148,29 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.1.2.0\lib\net45\StackExchange.Redis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
       <HintPath>..\packages\Swashbuckle.Core.5.3.2\lib\net40\Swashbuckle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.IdentityModel" />
     <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
       <Private>True</Private>
@@ -196,101 +221,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="libs\jwplayer.js" />
-    <Content Include=".gitignore" />
-    <Content Include="src\app\about\about-page.component.html">
-      <DependentUpon>about-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\about\about-page.component.scss">
-      <DependentUpon>about-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\admin-page.component.html">
-      <DependentUpon>admin-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\admin-page.component.scss">
-      <DependentUpon>admin-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\digital-assets\digital-asset-edit-page.component.html">
-      <DependentUpon>digital-asset-edit-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\digital-assets\digital-asset-edit-page.component.scss">
-      <DependentUpon>digital-asset-edit-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\digital-assets\digital-asset-list-page.component.html">
-      <DependentUpon>digital-asset-list-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\digital-assets\digital-asset-list-page.component.scss">
-      <DependentUpon>digital-asset-list-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\digital-assets\digital-asset-upload-page.component.html">
-      <DependentUpon>digital-asset-upload-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\digital-assets\digital-asset-upload-page.component.scss">
-      <DependentUpon>digital-asset-upload-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\videos\video-edit-page.component.html">
-      <DependentUpon>video-edit-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\videos\video-edit-page.component.scss">
-      <DependentUpon>video-edit-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\videos\video-list-page.component.html">
-      <DependentUpon>video-list-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\videos\video-list-page.component.scss">
-      <DependentUpon>video-list-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\app-header.component.html">
-      <DependentUpon>app-header.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\app-header.component.scss">
-      <DependentUpon>app-header.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\app.component.html">
-      <DependentUpon>app.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\app.component.scss">
-      <DependentUpon>app.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\landing\landing-page.component.html">
-      <DependentUpon>landing-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\landing\landing-page.component.scss">
-      <DependentUpon>landing-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\login\login-page.component.html">
-      <DependentUpon>login-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\login\login-page.component.scss">
-      <DependentUpon>login-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\search\search-page.component.html">
-      <DependentUpon>search-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\search\search-page.component.scss">
-      <DependentUpon>search-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\shared\components\digital-asset-upload.component.html">
-      <DependentUpon>digital-asset-upload.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\shared\components\digital-asset-upload.component.scss">
-      <DependentUpon>digital-asset-upload.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\video\jw-player-handler.component.html">
-      <DependentUpon>jw-player-handler.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\video\jw-player-handler.component.scss">
-      <DependentUpon>jw-player-handler.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\video\video-page.component.html">
-      <DependentUpon>video-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\video\video-page.component.scss">
-      <DependentUpon>video-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="typings.json" />
-    <Content Include="src\styles\_breakpoints.scss" />
-    <Content Include="src\styles\_variables.scss" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -298,16 +228,13 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="webpack.config.js" />
-    <Content Include="tsconfig.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup.cs" />
+    <Compile Include="UnityConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VideoCollection\VideoCollection.csproj">
@@ -315,64 +242,6 @@
       <Name>VideoCollection</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="src\app\admin\admin-routing.module.ts" />
-    <TypeScriptCompile Include="src\app\app-routing.module.ts" />
-    <TypeScriptCompile Include="src\app\environment.ts" />
-    <TypeScriptCompile Include="src\app\login\current-user.service.ts" />
-    <TypeScriptCompile Include="src\app\login\login-redirect.service.ts" />
-    <TypeScriptCompile Include="src\app\rxjs-extensions.ts" />
-    <TypeScriptCompile Include="src\app\shared\auth-guard.service.ts" />
-    <TypeScriptCompile Include="src\app\utilities\constants.ts" />
-    <TypeScriptCompile Include="src\app\utilities\form-encode.ts" />
-    <TypeScriptCompile Include="src\app\utilities\guid.ts" />
-    <TypeScriptCompile Include="src\app\utilities\index.ts" />
-    <TypeScriptCompile Include="src\app\utilities\oauth-helper.ts" />
-    <TypeScriptCompile Include="src\app\utilities\storage.ts" />
-    <TypeScriptCompile Include="src\main.ts" />
-    <TypeScriptCompile Include="src\polyfills.ts" />
-    <TypeScriptCompile Include="src\vendor.ts" />
-    <TypeScriptCompile Include="src\app\app.component.ts" />
-    <TypeScriptCompile Include="src\app\shared\api.service.ts" />
-    <TypeScriptCompile Include="src\app\shared\index.ts" />
-    <TypeScriptCompile Include="src\app\app.module.ts" />
-    <TypeScriptCompile Include="src\app\admin\admin-page.component.ts" />
-    <TypeScriptCompile Include="src\app\landing\landing-page.component.ts" />
-    <TypeScriptCompile Include="src\app\landing\index.ts" />
-    <TypeScriptCompile Include="src\app\admin\index.ts" />
-    <TypeScriptCompile Include="src\app\login\login-page.component.ts" />
-    <TypeScriptCompile Include="src\app\login\index.ts" />
-    <TypeScriptCompile Include="src\app\shared\shared.module.ts" />
-    <TypeScriptCompile Include="src\app\admin\videos\video-list-page.component.ts" />
-    <TypeScriptCompile Include="src\app\admin\videos\video-edit-page.component.ts" />
-    <TypeScriptCompile Include="src\app\search\search-page.component.ts" />
-    <TypeScriptCompile Include="src\app\search\index.ts" />
-    <TypeScriptCompile Include="src\app\about\about-page.component.ts" />
-    <TypeScriptCompile Include="src\app\about\index.ts" />
-    <TypeScriptCompile Include="src\app\video\video-page.component.ts" />
-    <TypeScriptCompile Include="src\app\video\index.ts" />
-    <TypeScriptCompile Include="src\app\video\video.model.ts" />
-    <TypeScriptCompile Include="src\app\utilities\utilities.module.ts" />
-    <TypeScriptCompile Include="src\app\app-header.component.ts" />
-    <TypeScriptCompile Include="src\app\video\jw-player-handler.component.ts" />
-    <TypeScriptCompile Include="src\app\video\video.module.ts" />
-    <TypeScriptCompile Include="src\app\login\login.module.ts" />
-    <TypeScriptCompile Include="src\app\admin\admin.module.ts" />
-    <TypeScriptCompile Include="src\app\shared\components\shared-components.module.ts" />
-    <TypeScriptCompile Include="src\app\shared\components\index.ts" />
-    <TypeScriptCompile Include="src\app\shared\components\digital-asset-upload.component.ts" />
-    <TypeScriptCompile Include="src\app\admin\videos\index.ts" />
-    <TypeScriptCompile Include="src\app\admin\digital-assets\digital-asset-upload-page.component.ts" />
-    <TypeScriptCompile Include="src\app\admin\digital-assets\index.ts" />
-    <TypeScriptCompile Include="src\app\admin\digital-assets\digital-asset.service.ts" />
-    <TypeScriptCompile Include="src\app\admin\digital-assets\digital-asset.module.ts" />
-    <TypeScriptCompile Include="src\app\admin\digital-assets\digital-asset-list-page.component.ts" />
-    <TypeScriptCompile Include="src\app\admin\digital-assets\digital-asset-edit-page.component.ts" />
-    <TypeScriptCompile Include="src\app\admin\videos\video.service.ts" />
-    <TypeScriptCompile Include="src\app\admin\videos\video.module.ts" />
-    <TypeScriptCompile Include="src\app\admin\videos\video.model.ts" />
-  </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -386,25 +255,18 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>56622</DevelopmentServerPort>
+          <DevelopmentServerPort>55061</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56622/</IISUrl>
+          <IISUrl>http://localhost:55061/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl></CustomServerUrl>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
@@ -412,4 +274,11 @@
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

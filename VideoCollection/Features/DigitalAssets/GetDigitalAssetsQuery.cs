@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Data.Entity;
+using VideoCollection.Data.Models;
 
 namespace VideoCollection.Features.DigitalAssets
 {
@@ -27,7 +28,8 @@ namespace VideoCollection.Features.DigitalAssets
 
             public async Task<GetDigitalAssetsResponse> Handle(GetDigitalAssetsRequest request)
             {
-                var digitalAssets = await _dataContext.DigitalAssets.ToListAsync();
+                var digitalAssets = await _cache.FromCacheOrServiceAsync<List<DigitalAsset>>(() => _dataContext.DigitalAssets.ToListAsync(),"[Digital Assets]");
+
                 return new GetDigitalAssetsResponse()
                 {
                     DigitalAssets = digitalAssets.Select(x => DigitalAssetApiModel.FromDigitalAsset(x)).ToList()

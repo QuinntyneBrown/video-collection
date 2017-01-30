@@ -8,7 +8,7 @@ using VideoCollection.Features.DigitalAssets.UploadHandlers;
 
 namespace VideoCollection.Features.DigitalAssets
 {
-    [Authorize]
+    [AllowAnonymous]
     [RoutePrefix("api/digitalAsset")]
     public class DigitalAssetController : ApiController
     {
@@ -55,9 +55,8 @@ namespace VideoCollection.Features.DigitalAssets
         {
             if (!Request.Content.IsMimeMultipartContent("form-data"))
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
-            var provider = await Request.Content.ReadAsMultipartAsync(new InMemoryMultipartFormDataStreamProvider());
-            var response = await _mediator.SendAsync(new UploadDigitalAssetCommand.UploadDigitalAssetRequest() { Provider = provider });
-            return Ok(response);
+            var provider = await Request.Content.ReadAsMultipartAsync(new InMemoryMultipartFormDataStreamProvider());            
+            return Ok(await _mediator.SendAsync(new UploadDigitalAssetCommand.UploadDigitalAssetRequest() { Provider = provider }));
         }
 
         protected readonly IMediator _mediator;
