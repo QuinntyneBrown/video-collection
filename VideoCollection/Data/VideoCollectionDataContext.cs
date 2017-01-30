@@ -1,5 +1,7 @@
 using System.Data.Entity;
 using VideoCollection.Data.Models;
+using System.Linq;
+using System;
 
 namespace VideoCollection.Data
 {
@@ -24,6 +26,25 @@ namespace VideoCollection.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
-        } 
+        }
+
+        public override int SaveChanges()
+        {
+            foreach (var entry in this.ChangeTracker.Entries()
+            .Where(e => e.Entity is ILoggable &&
+                ((e.State == EntityState.Added || (e.State == EntityState.Modified)))))
+            {
+
+                if (((ILoggable)entry.Entity).CreatedOn == null)
+                {
+                    ((ILoggable)entry.Entity).CreatedOn = DateTime.UtcNow;
+                }
+
+                ((ILoggable)entry.Entity).LastModifiedOn = DateTime.UtcNow;
+
+            }
+
+            return base.SaveChanges();
+        }
     }
 }
