@@ -32,9 +32,7 @@ export class ApiService {
             .post(`${this._baseUrl}/api/user/token`, formEncode(options), { headers: headers })
             .map(response => {
                 var accessToken = response.json()["access_token"];
-                this._storage.put({
-                    name: "accessToken", value: accessToken
-                });
+                this._storage.put({ name: "accessToken", value: accessToken });
                 return accessToken;
             })
             .catch(err => {

@@ -17,7 +17,7 @@ namespace VideoCollection.Migrations
         {
             RoleConfiguration.Seed(context);
             UserConfiguration.Seed(context);
-            VideoConfiguration.Seed(context);
+            //VideoConfiguration.Seed(context);
         }
     }
 }

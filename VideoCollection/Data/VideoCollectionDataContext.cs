@@ -23,10 +23,6 @@ namespace VideoCollection.Data
         public DbSet<Tenant> Tenants { get; set; }
         public DbSet<User> Users { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-
-        }
 
         public override int SaveChanges()
         {
@@ -35,12 +31,12 @@ namespace VideoCollection.Data
                 ((e.State == EntityState.Added || (e.State == EntityState.Modified)))))
             {
 
-                if (((ILoggable)entry.Entity).CreatedOn == null)
+                if (((ILoggable)entry.Entity).CreatedOn == default(DateTime))
                 {
-                    ((ILoggable)entry.Entity).CreatedOn = DateTime.UtcNow;
+                    ((ILoggable)entry.Entity).CreatedOn = DateTime.Now;
                 }
 
-                ((ILoggable)entry.Entity).LastModifiedOn = DateTime.UtcNow;
+                ((ILoggable)entry.Entity).LastModifiedOn = DateTime.Now;
 
             }
 

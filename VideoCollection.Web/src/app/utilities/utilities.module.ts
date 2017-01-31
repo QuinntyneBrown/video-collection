@@ -5,8 +5,8 @@ import { Storage } from './storage';
 import { OAuthHelper } from "./oauth-helper";
 
 const providers = [
-    OAuthHelper,
-    Storage
+    Storage,
+    OAuthHelper    
 ];
 
 @NgModule({
