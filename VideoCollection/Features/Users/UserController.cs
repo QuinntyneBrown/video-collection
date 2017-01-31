@@ -2,7 +2,6 @@ using MediatR;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using VideoCollection.Security;
 
 namespace VideoCollection.Features.Users
 {
