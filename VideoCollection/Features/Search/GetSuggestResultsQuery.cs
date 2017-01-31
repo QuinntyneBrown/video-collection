@@ -1,5 +1,4 @@
 using MediatR;
-using VideoCollection.Data;
 using System.Threading.Tasks;
 using Microsoft.Azure.Search.Models;
 using Microsoft.Azure.Search;

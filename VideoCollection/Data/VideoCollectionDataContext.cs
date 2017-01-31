@@ -27,9 +27,7 @@ namespace VideoCollection.Data
         public override int SaveChanges()
         {
             foreach (var entry in this.ChangeTracker.Entries()
-            .Where(e => e.Entity is ILoggable &&
-                ((e.State == EntityState.Added || (e.State == EntityState.Modified)))))
-            {
+            .Where(e => e.Entity is ILoggable && ((e.State == EntityState.Added || (e.State == EntityState.Modified))))) {
 
                 if (((ILoggable)entry.Entity).CreatedOn == default(DateTime))
                 {

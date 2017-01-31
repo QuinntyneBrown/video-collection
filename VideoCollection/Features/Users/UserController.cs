@@ -40,6 +40,19 @@ namespace VideoCollection.Features.Users
         public async Task<IHttpActionResult> GetById([FromUri]GetUserByIdQuery.GetUserByIdRequest request)
             => Ok(await _mediator.Send(request));
 
+        [Route("current")]
+        [HttpGet]
+        [AllowAnonymous]
+        [ResponseType(typeof(GetUserByUsernameQuery.GetUserByUsernameResponse))]
+        public async Task<IHttpActionResult> Current()
+        {
+            if (!User.Identity.IsAuthenticated)
+                return Ok();
+
+            var request = new GetUserByUsernameQuery.GetUserByUsernameRequest() { Username = User.Identity.Name };
+            return Ok(await _mediator.Send(request));
+        }
+
         [Route("remove")]
         [HttpDelete]
         [ResponseType(typeof(RemoveUserCommand.RemoveUserResponse))]

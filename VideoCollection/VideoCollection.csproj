@@ -204,6 +204,7 @@
     <Compile Include="Features\DigitalAssets\Constants.cs" />
     <Compile Include="Features\DigitalAssets\UploadDigitalAssetCommand.cs" />
     <Compile Include="Features\Search\GetSuggestResultsQuery.cs" />
+    <Compile Include="Features\Users\GetUserByUsernameQuery.cs" />
     <Compile Include="Features\Videos\GetVideoBySlugQuery.cs" />
     <Compile Include="Filters\WebApiUnityActionFilterProvider.cs" />
     <Compile Include="Data\VideoCollectionDataContext.cs" />
