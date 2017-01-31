@@ -17,7 +17,7 @@ import {
 } from "@angular/forms";
 import { ApiService } from "../shared";
 
-import { LoginRedirectService } from "./login-redirect.service";
+import { LoginRedirectService } from "../shared";
 
 @Component({
     template: require("./login-page.component.html"),

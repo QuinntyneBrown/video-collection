@@ -7,7 +7,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import "./rxjs-extensions";
 import { AppComponent } from './app.component';
 import { AppHeaderComponent } from "./app-header.component";
-import { LoginRedirectService, CurrentUserService } from "./login";
 import { SharedModule } from "./shared";
 import { RoutingModule, routedComponents } from "./app-routing.module";
 import { UtilitiesModule } from "./utilities";

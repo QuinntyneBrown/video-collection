@@ -12,6 +12,7 @@ import {
 } from "./admin";
 import { AboutPageComponent } from "./about";
 import { VideoPageComponent } from "./video";
+import { AuthGuardService } from "./shared";
 
 export const routes: Routes = [
     {
@@ -33,7 +34,8 @@ export const routes: Routes = [
             { path: 'video/create', component:  VideoEditPageComponent},
             { path: 'video/list', component: VideoListPageComponent },
             { path: 'video/edit/:id', component: VideoEditPageComponent}
-        ]
+        ],
+        canActivate:[AuthGuardService]
     },
     {
         path: 'about',

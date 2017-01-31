@@ -319,8 +319,8 @@
     <TypeScriptCompile Include="src\app\admin\admin-routing.module.ts" />
     <TypeScriptCompile Include="src\app\app-routing.module.ts" />
     <TypeScriptCompile Include="src\app\environment.ts" />
-    <TypeScriptCompile Include="src\app\login\current-user.service.ts" />
-    <TypeScriptCompile Include="src\app\login\login-redirect.service.ts" />
+    <TypeScriptCompile Include="src\app\shared\current-user.service.ts" />
+    <TypeScriptCompile Include="src\app\shared\login-redirect.service.ts" />
     <TypeScriptCompile Include="src\app\rxjs-extensions.ts" />
     <TypeScriptCompile Include="src\app\shared\auth-guard.service.ts" />
     <TypeScriptCompile Include="src\app\utilities\constants.ts" />

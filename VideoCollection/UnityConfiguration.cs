@@ -16,7 +16,7 @@ namespace VideoCollection
             container.RegisterType<IMediator, Mediator>();
 
             var classes = AllClasses.FromAssemblies(typeof(UnityConfiguration).Assembly)
-                .Where(x=>x.Name.Contains("Controller") == false)
+                .Where(x=>x.Name.Contains("Controller") == false && x.FullName.Contains("Data.Models") == false)
                 .ToList();
 
             container.RegisterTypes(classes, WithMappings.FromAllInterfaces, GetName, GetLifetimeManager);

@@ -4,4 +4,7 @@
 export class CurrentUserService {
     constructor() { }
 
+    public get isLoggedIn() {
+        return true;
+    }
 }
