@@ -2,9 +2,7 @@ using MediatR;
 using VideoCollection.Data;
 using VideoCollection.Data.Models;
 using VideoCollection.Utilities;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Linq;
 using System.Data.Entity;
 
 namespace VideoCollection.Features.Users
@@ -16,10 +14,7 @@ namespace VideoCollection.Features.Users
             public UserApiModel User { get; set; }
         }
 
-        public class AddOrUpdateUserResponse
-        {
-
-        }
+        public class AddOrUpdateUserResponse { }
 
         public class AddOrUpdateUserHandler : IAsyncRequestHandler<AddOrUpdateUserRequest, AddOrUpdateUserResponse>
         {
@@ -33,8 +28,8 @@ namespace VideoCollection.Features.Users
             {
                 var entity = await _dataContext.Users
                     .SingleOrDefaultAsync(x => x.Id == request.User.Id && x.IsDeleted == false);
-                if (entity == null) _dataContext.Users.Add(entity = new User());
-                entity.Name = request.User.Name;
+                if (entity == null) _dataContext.Users.Add(entity = new User());                
+                entity.Username = request.User.Username;                
                 await _dataContext.SaveChangesAsync();
 
                 return new AddOrUpdateUserResponse()

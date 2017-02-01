@@ -1,8 +1,21 @@
 @import "../styles/breakpoints";
 
-.app-header {
-    padding:0% 4%;
+app-header {
+    display:block;
+    margin:0% 4%;
+    width:100%;
+
+    h1,a {
+        display:inline-block;
+    }
+
+    a {
+        margin-left:4%;
+        cursor:pointer;
+        font-size:1.25em;
+    }
 }
+
 
 @media only screen and (min-width: $screen-sm-min) { 
 

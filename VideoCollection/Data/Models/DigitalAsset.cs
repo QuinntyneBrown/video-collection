@@ -6,6 +6,7 @@ namespace VideoCollection.Data.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Folder { get; set; }
         public string FileName { get; set; }
         public string Description { get; set; }
         public DateTime? Created { get; set; }

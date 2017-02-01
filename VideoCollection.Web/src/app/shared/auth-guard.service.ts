@@ -12,6 +12,8 @@ import {
 import { CurrentUserService } from "./current-user.service";
 import { LoginRedirectService } from "./login-redirect.service";
 
+import { Observable } from "rxjs";
+
 @Injectable()
 export class AuthGuardService implements CanActivate {
     constructor(
@@ -25,12 +27,17 @@ export class AuthGuardService implements CanActivate {
     public canActivate(
         next: ActivatedRouteSnapshot,
         state: RouterStateSnapshot
-    ) {
+    ): Observable<boolean> {
+        return this._currentUserService
+            .getCurrentUser()
+            .map(x => {
 
-        if (this._currentUserService.isLoggedIn) { return true; }
+                if (x == true)
+                    return true;
 
-        this._loginRedirectService.lastPath = state.url;
-        this._router.navigate(['/login']);
-        return false;
+                this._loginRedirectService.lastPath = state.url;
+                this._router.navigate(['/login']);
+                return false;
+            });        
     }
 }

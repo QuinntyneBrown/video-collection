@@ -2,8 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { DigitalAssetModule } from "./digital-assets";
 import { VideoModule  } from "./videos";
+import { AdminHeaderComponent } from "./admin-header.component";
 
-const declarables = [];
+const declarables = [
+    AdminHeaderComponent
+];
+
 const providers = [];
 
 @NgModule({

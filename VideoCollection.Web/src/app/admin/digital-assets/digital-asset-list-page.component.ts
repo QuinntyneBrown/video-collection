@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, Input, OnInit } from "@angular/core";
 import { Router } from "@angular/router";   
 import { DigitalAssetService } from "./digital-asset.service";
+import { DigitalAsset } from "./digital-asset.model";
 
 @Component({
     template: require("./digital-asset-list-page.component.html"),
@@ -16,8 +17,10 @@ export class DigitalAssetListPageComponent implements OnInit {
     ngOnInit() {
         this._digitalAssetService
             .get()
-            .subscribe((response: any) => { this.digitalAssets = response.digitalAssets; });
+            .subscribe((response: any) => {                
+                this.digitalAssets = response.digitalAssets;
+            });
     }    
 
-    public digitalAssets: Array<any> = [];
+    public digitalAssets: Array<DigitalAsset> = [];
 }

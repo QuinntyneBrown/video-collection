@@ -1,6 +1,23 @@
 @import "../../styles/breakpoints";
 
 
+admin-page {    
+    display:block;
+
+    button {
+        display: inline-block;
+        min-width: 125px;
+        line-height: 1.75em;
+        font-size: 1.25em;
+        border: 1px solid #333;
+        text-align: center;
+        cursor: pointer;
+        color: #333;
+        border-radius: 4px;
+        background-color:#fff;
+    }
+}
+
 @media only screen and (min-width: $screen-sm-min) { 
 
 

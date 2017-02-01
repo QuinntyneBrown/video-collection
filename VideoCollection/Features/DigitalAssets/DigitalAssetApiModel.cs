@@ -7,6 +7,7 @@ namespace VideoCollection.Features.DigitalAssets
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Folder { get; set; }
         public string FileName { get; set; }
         public string Description { get; set; }
         public DateTime? Created { get; set; }
@@ -24,6 +25,7 @@ namespace VideoCollection.Features.DigitalAssets
         {
             var model = new TModel();
             model.Id = digitalAsset.Id;
+            model.Folder = digitalAsset.Folder;
             model.Name = digitalAsset.Name;
             model.FileName = digitalAsset.FileName;
             model.Description = digitalAsset.Description;

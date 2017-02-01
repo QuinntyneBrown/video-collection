@@ -32,6 +32,7 @@ namespace VideoCollection.Features.DigitalAssets
                     .SingleOrDefaultAsync(x => x.Id == request.DigitalAsset.Id && x.IsDeleted == false);
                 if (entity == null) _dataContext.DigitalAssets.Add(entity = new DigitalAsset());
                 entity.Name = request.DigitalAsset.Name;
+                entity.Folder = request.DigitalAsset.Folder;
                 await _dataContext.SaveChangesAsync();
 
                 return new AddOrUpdateDigitalAssetResponse()
