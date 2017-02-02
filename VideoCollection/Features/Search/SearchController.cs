@@ -30,8 +30,8 @@ namespace VideoCollection.Features.Search
 
         [Route("upload")]        
         [HttpGet]
-        [ResponseType(typeof(MergeOrUploadCommand.MergeOrUploadResponse))]
-        public async Task<IHttpActionResult> Upload([FromUri]MergeOrUploadCommand.MergeOrUploadRequest request)
+        [ResponseType(typeof(MergeOrUploadVideosCommand.MergeOrUploadResponse))]
+        public async Task<IHttpActionResult> Upload([FromUri]MergeOrUploadVideosCommand.MergeOrUploadRequest request)
             => Ok(await _mediator.Send(request));
 
         protected readonly IMediator _mediator;

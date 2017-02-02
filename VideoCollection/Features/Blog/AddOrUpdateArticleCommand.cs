@@ -34,7 +34,7 @@ namespace VideoCollection.Features.Blog
                 var entity = await _dataContext.Articles
                     .SingleOrDefaultAsync(x => x.Id == request.Article.Id && x.IsDeleted == false);
                 if (entity == null) _dataContext.Articles.Add(entity = new Article());
-                entity.Name = request.Article.Name;
+                entity.Title = request.Article.Title;
                 await _dataContext.SaveChangesAsync();
 
                 return new AddOrUpdateArticleResponse()

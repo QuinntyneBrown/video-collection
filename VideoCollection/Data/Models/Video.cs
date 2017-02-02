@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VideoCollection.Data.Models
 {
-    public class Video: ILoggable
+    public class Video: ILoggable, IPubllishable
     {
         public int Id { get; set; }
+        [ForeignKey("Tenant")]
+        public int? TenantId { get; set; }
         public string Category { get; set; }
         public string Title { get; set; }
         public string SubTitle { get; set; }
@@ -22,6 +25,7 @@ namespace VideoCollection.Data.Models
         public string CreatedBy { get; set; }
         public DateTime LastModifiedOn { get; set; }
         public string LastModifiedBy { get; set; }
+        public Tenant Tenant { get; set; }
         public bool IsDeleted { get; set; }
     }
 }

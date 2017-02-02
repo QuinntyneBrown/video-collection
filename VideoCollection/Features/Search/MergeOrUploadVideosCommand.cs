@@ -10,7 +10,7 @@ using VideoCollection.Data.Models;
 
 namespace VideoCollection.Features.Search
 {
-    public class MergeOrUploadCommand
+    public class MergeOrUploadVideosCommand
     {
         public class MergeOrUploadRequest : IRequest<MergeOrUploadResponse> { }
 

@@ -272,7 +272,7 @@
     <Compile Include="Features\Search\SearchController.cs" />
     <Compile Include="Features\Search\SearchConfiguration.cs" />
     <Compile Include="Features\Search\ISearchConfiguration.cs" />
-    <Compile Include="Features\Search\MergeOrUploadCommand.cs" />
+    <Compile Include="Features\Search\MergeOrUploadVideosCommand.cs" />
     <Compile Include="Security\AuthenticateCommand.cs" />
     <Compile Include="Security\GetClaimsForUserQuery.cs" />
     <Compile Include="Utilities\RedisCache.cs" />
@@ -311,13 +311,28 @@
     <Compile Include="Data\Models\Article.cs" />
     <Compile Include="Data\Models\Author.cs" />
     <Compile Include="Data\Models\AuthorAvatar.cs" />
+    <Compile Include="Data\Models\VideoArticle.cs" />
+    <Compile Include="Features\VideoArticles\AddOrUpdateVideoArticleCommand.cs" />
+    <Compile Include="Features\VideoArticles\GetVideoArticlesQuery.cs" />
+    <Compile Include="Features\VideoArticles\GetVideoArticleByIdQuery.cs" />
+    <Compile Include="Features\VideoArticles\RemoveVideoArticleCommand.cs" />
+    <Compile Include="Features\VideoArticles\VideoArticleApiModel.cs" />
+    <Compile Include="Features\VideoArticles\VideoArticleController.cs" />
+    <Compile Include="Data\Models\Tag.cs" />
+    <Compile Include="Features\Blog\AddOrUpdateTagCommand.cs" />
+    <Compile Include="Features\Blog\GetTagsQuery.cs" />
+    <Compile Include="Features\Blog\GetTagByIdQuery.cs" />
+    <Compile Include="Features\Blog\RemoveTagCommand.cs" />
+    <Compile Include="Features\Blog\TagApiModel.cs" />
+    <Compile Include="Features\Blog\TagController.cs" />
+    <Compile Include="Data\Models\ArticleTag.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Features\Blog\" />
+    <Folder Include="Features\VideoArticles\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
