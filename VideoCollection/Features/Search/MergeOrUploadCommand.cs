@@ -1,6 +1,5 @@
 using MediatR;
 using VideoCollection.Data;
-using VideoCollection.Utilities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
@@ -19,7 +18,7 @@ namespace VideoCollection.Features.Search
 
         public class MergeOrUploadHandler : IAsyncRequestHandler<MergeOrUploadRequest, MergeOrUploadResponse>
         {
-            public MergeOrUploadHandler(VideoCollectionDataContext dataContext, ICache cache, ISearchConfiguration searchConfiguration)
+            public MergeOrUploadHandler(VideoCollectionDataContext dataContext, ISearchConfiguration searchConfiguration)
             {
                 _dataContext = dataContext;                
                 _searchIndexClient = new SearchIndexClient(
@@ -32,6 +31,9 @@ namespace VideoCollection.Features.Search
             {
                 var document = new Document();
                 document.Add("id", $"{video.Id}");
+                document.Add("category", video.Category);
+                document.Add("rating", $"{video.Rating}");
+                document.Add("subTitle", video.SubTitle);
                 document.Add("title", video.Title);
                 document.Add("description", video.Description);
                 document.Add("abstract", video.Abstract);
@@ -49,7 +51,6 @@ namespace VideoCollection.Features.Search
             }
 
             private readonly VideoCollectionDataContext _dataContext;
-            private readonly ICache _cache;
             private SearchIndexClient _searchIndexClient { get; set; }
         }
     }

@@ -1,5 +1,6 @@
 ﻿import { Injectable } from "@angular/core";
-import { storageKey } from "./constants";
+
+export const storageKey = "[Video Collection App] Storage";
 
 @Injectable()
 export class Storage {
@@ -20,14 +21,7 @@ export class Storage {
     private onPageHide() {
         this._localStorage.setItem(this._key, JSON.stringify(this._items));
     }
-
-    private static _instance;
-
-    public static get Instance() {
-        this._instance = this._instance || new this();
-        return this._instance;
-    }
-
+    
     private _items = null;
 
     public get items() {

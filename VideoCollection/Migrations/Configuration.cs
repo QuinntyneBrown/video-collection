@@ -10,14 +10,15 @@ namespace VideoCollection.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
+            AutomaticMigrationDataLossAllowed = true;             
         }
 
         protected override void Seed(VideoCollection.Data.VideoCollectionDataContext  context)
         {
             RoleConfiguration.Seed(context);
             UserConfiguration.Seed(context);
-            //VideoConfiguration.Seed(context);
+            DigitalAssetConfiguration.Seed(context);
+            VideoConfiguration.Seed(context);
         }
     }
 }

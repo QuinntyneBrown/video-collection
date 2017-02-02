@@ -15,6 +15,9 @@ namespace VideoCollection.Data
             Configuration.AutoDetectChangesEnabled = true;
         }
 
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<AuthorAvatar> AuthorAvatars { get; set; }
         public DbSet<DigitalAsset> DigitalAssets { get; set; }
         public DbSet<Playlist> Playlists { get; set; }
         public DbSet<PlaylistItem> PlaylistItems { get; set; }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace VideoCollection.Data.Models
 {
@@ -7,9 +8,13 @@ namespace VideoCollection.Data.Models
         public int Id { get; set; }
         public string Category { get; set; }
         public string Title { get; set; }
+        public string SubTitle { get; set; }
         public string Slug { get; set; }
         public string YouTubeVideoId { get; set; }
         public string Abstract { get; set; }
+        public int DurationInSeconds { get; set; }
+        public decimal Rating { get; set; }
+        public ICollection<VideoRating> Ratings { get; set; }
         public string Description { get; set; }
         public DateTime PublishedOn { get; set; }
         public string PublishedBy { get; set; }

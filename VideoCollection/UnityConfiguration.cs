@@ -21,7 +21,8 @@ namespace VideoCollection
 
             container.RegisterTypes(classes, WithMappings.FromAllInterfaces, GetName, GetLifetimeManager);
             container.RegisterInstance<SingleInstanceFactory>(t => container.IsRegistered(t) ? container.Resolve(t) : null);
-            container.RegisterInstance<MultiInstanceFactory>(t => container.ResolveAll(t));            
+            container.RegisterInstance<MultiInstanceFactory>(t => container.ResolveAll(t));
+
             container.RegisterInstance(AuthConfiguration.LazyConfig);
             container.RegisterInstance(RedisCacheConfiguration.Config);            
             return container;

@@ -2,9 +2,7 @@ using MediatR;
 using VideoCollection.Data;
 using VideoCollection.Data.Models;
 using VideoCollection.Utilities;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Linq;
 using System.Data.Entity;
 
 namespace VideoCollection.Features.Tenants
@@ -34,16 +32,11 @@ namespace VideoCollection.Features.Tenants
                 entity.Name = request.Tenant.Name;
                 await _dataContext.SaveChangesAsync();
 
-                return new AddOrUpdateTenantResponse()
-                {
-
-                };
+                return new AddOrUpdateTenantResponse() { };
             }
 
             private readonly VideoCollectionDataContext _dataContext;
             private readonly ICache _cache;
         }
-
     }
-
 }

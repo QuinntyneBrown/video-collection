@@ -17,17 +17,12 @@ namespace VideoCollection.Migrations
             var roles = new List<Role>();
             roles.Add(systemRole);
 
-            var user = context.Users.Include(x=>x.Roles).FirstOrDefault(x => x.Username == "quinntynebrown@gmail.com");
-
-            if (user == null)
+            context.Users.AddOrUpdate(x => x.Username, new User()
             {
-                context.Users.Add(new User()
-                {
-                    Username = "quinntynebrown@gmail.com",
-                    Password = new EncryptionService().HashPassword("P@ssw0rd"),
-                    Roles = roles
-                });
-            }
+                Username = "quinntynebrown@gmail.com",
+                Password = new EncryptionService().HashPassword("P@ssw0rd"),
+                Roles = roles
+            });
 
             context.SaveChanges();
         }

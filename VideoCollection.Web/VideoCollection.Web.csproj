@@ -6,8 +6,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
+    <ProductVersion></ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{658DA84D-AD6C-414A-9333-B89232911187}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -22,8 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
     <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
     <TypeScriptEmitDecoratorMetadata>true</TypeScriptEmitDecoratorMetadata>
     <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
@@ -206,48 +204,6 @@
     <Content Include="src\app\about\about-page.component.scss">
       <DependentUpon>about-page.component.ts</DependentUpon>
     </Content>
-    <Content Include="src\app\admin\admin-header.component.html">
-      <DependentUpon>admin-header.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\admin-header.component.scss">
-      <DependentUpon>admin-header.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\admin-page.component.html">
-      <DependentUpon>admin-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\admin-page.component.scss">
-      <DependentUpon>admin-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\digital-assets\digital-asset-edit-page.component.html">
-      <DependentUpon>digital-asset-edit-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\digital-assets\digital-asset-edit-page.component.scss">
-      <DependentUpon>digital-asset-edit-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\digital-assets\digital-asset-list-page.component.html">
-      <DependentUpon>digital-asset-list-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\digital-assets\digital-asset-list-page.component.scss">
-      <DependentUpon>digital-asset-list-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\digital-assets\digital-asset-upload-page.component.html">
-      <DependentUpon>digital-asset-upload-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\digital-assets\digital-asset-upload-page.component.scss">
-      <DependentUpon>digital-asset-upload-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\videos\video-edit-page.component.html">
-      <DependentUpon>video-edit-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\videos\video-edit-page.component.scss">
-      <DependentUpon>video-edit-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\videos\video-list-page.component.html">
-      <DependentUpon>video-list-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\admin\videos\video-list-page.component.scss">
-      <DependentUpon>video-list-page.component.ts</DependentUpon>
-    </Content>
     <Content Include="src\app\app-header.component.html">
       <DependentUpon>app-header.component.ts</DependentUpon>
     </Content>
@@ -266,23 +222,11 @@
     <Content Include="src\app\landing\landing-page.component.scss">
       <DependentUpon>landing-page.component.ts</DependentUpon>
     </Content>
-    <Content Include="src\app\login\login-page.component.html">
-      <DependentUpon>login-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\login\login-page.component.scss">
-      <DependentUpon>login-page.component.ts</DependentUpon>
-    </Content>
     <Content Include="src\app\search\search-page.component.html">
       <DependentUpon>search-page.component.ts</DependentUpon>
     </Content>
     <Content Include="src\app\search\search-page.component.scss">
       <DependentUpon>search-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\shared\components\digital-asset-upload.component.html">
-      <DependentUpon>digital-asset-upload.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\shared\components\digital-asset-upload.component.scss">
-      <DependentUpon>digital-asset-upload.component.ts</DependentUpon>
     </Content>
     <Content Include="src\app\video\jw-player-handler.component.html">
       <DependentUpon>jw-player-handler.component.ts</DependentUpon>
@@ -325,35 +269,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="src\app\admin\admin-routing.module.ts" />
     <TypeScriptCompile Include="src\app\app-routing.module.ts" />
     <TypeScriptCompile Include="src\app\environment.ts" />
-    <TypeScriptCompile Include="src\app\shared\current-user.service.ts" />
-    <TypeScriptCompile Include="src\app\shared\login-redirect.service.ts" />
     <TypeScriptCompile Include="src\app\rxjs-extensions.ts" />
-    <TypeScriptCompile Include="src\app\shared\auth-guard.service.ts" />
-    <TypeScriptCompile Include="src\app\utilities\constants.ts" />
-    <TypeScriptCompile Include="src\app\utilities\form-encode.ts" />
-    <TypeScriptCompile Include="src\app\utilities\guid.ts" />
     <TypeScriptCompile Include="src\app\utilities\index.ts" />
-    <TypeScriptCompile Include="src\app\utilities\oauth-helper.ts" />
     <TypeScriptCompile Include="src\app\utilities\storage.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\polyfills.ts" />
     <TypeScriptCompile Include="src\vendor.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
-    <TypeScriptCompile Include="src\app\shared\api.service.ts" />
-    <TypeScriptCompile Include="src\app\shared\index.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
-    <TypeScriptCompile Include="src\app\admin\admin-page.component.ts" />
     <TypeScriptCompile Include="src\app\landing\landing-page.component.ts" />
     <TypeScriptCompile Include="src\app\landing\index.ts" />
-    <TypeScriptCompile Include="src\app\admin\index.ts" />
-    <TypeScriptCompile Include="src\app\login\login-page.component.ts" />
-    <TypeScriptCompile Include="src\app\login\index.ts" />
-    <TypeScriptCompile Include="src\app\shared\shared.module.ts" />
-    <TypeScriptCompile Include="src\app\admin\videos\video-list-page.component.ts" />
-    <TypeScriptCompile Include="src\app\admin\videos\video-edit-page.component.ts" />
     <TypeScriptCompile Include="src\app\search\search-page.component.ts" />
     <TypeScriptCompile Include="src\app\search\index.ts" />
     <TypeScriptCompile Include="src\app\about\about-page.component.ts" />
@@ -365,25 +292,14 @@
     <TypeScriptCompile Include="src\app\app-header.component.ts" />
     <TypeScriptCompile Include="src\app\video\jw-player-handler.component.ts" />
     <TypeScriptCompile Include="src\app\video\video.module.ts" />
-    <TypeScriptCompile Include="src\app\login\login.module.ts" />
-    <TypeScriptCompile Include="src\app\admin\admin.module.ts" />
-    <TypeScriptCompile Include="src\app\shared\components\shared-components.module.ts" />
-    <TypeScriptCompile Include="src\app\shared\components\index.ts" />
-    <TypeScriptCompile Include="src\app\shared\components\digital-asset-upload.component.ts" />
-    <TypeScriptCompile Include="src\app\admin\videos\index.ts" />
-    <TypeScriptCompile Include="src\app\admin\digital-assets\digital-asset-upload-page.component.ts" />
-    <TypeScriptCompile Include="src\app\admin\digital-assets\index.ts" />
-    <TypeScriptCompile Include="src\app\admin\digital-assets\digital-asset.service.ts" />
-    <TypeScriptCompile Include="src\app\admin\digital-assets\digital-asset.module.ts" />
-    <TypeScriptCompile Include="src\app\admin\digital-assets\digital-asset-list-page.component.ts" />
-    <TypeScriptCompile Include="src\app\admin\digital-assets\digital-asset-edit-page.component.ts" />
-    <TypeScriptCompile Include="src\app\admin\videos\video.service.ts" />
-    <TypeScriptCompile Include="src\app\admin\videos\video.module.ts" />
-    <TypeScriptCompile Include="src\app\admin\videos\video.model.ts" />
-    <TypeScriptCompile Include="src\app\admin\digital-assets\digital-asset.model.ts" />
-    <TypeScriptCompile Include="src\app\admin\admin-header.component.ts" />
+    <TypeScriptCompile Include="src\app\index.ts" />
+    <TypeScriptCompile Include="src\app\shared\api.service.ts" />
+    <TypeScriptCompile Include="src\app\shared\shared.module.ts" />
+    <TypeScriptCompile Include="src\app\shared\index.ts" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="src\app\shared\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -402,8 +318,7 @@
           <IISUrl>http://localhost:56622/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
+          <CustomServerUrl></CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

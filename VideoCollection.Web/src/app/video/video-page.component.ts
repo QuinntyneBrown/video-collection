@@ -1,8 +1,8 @@
 import { Component, ChangeDetectionStrategy, Input, OnInit } from "@angular/core";
 import { Location } from "@angular/common";
 import { ActivatedRouteSnapshot } from "@angular/router";
-import { ApiService } from "../shared";
 import { Video } from "./video.model";
+import { ApiService } from "../shared";
 
 @Component({
     template: require("./video-page.component.html"),

@@ -8,7 +8,7 @@ import {
     OnDestroy
 } from "@angular/core";
 
-import { guid } from "../utilities";
+function guid() { return "1"; }
 
 declare var jwplayer: any;
 

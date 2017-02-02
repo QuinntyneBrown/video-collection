@@ -7,12 +7,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import "./rxjs-extensions";
 import { AppComponent } from './app.component';
 import { AppHeaderComponent } from "./app-header.component";
-import { SharedModule } from "./shared";
 import { RoutingModule, routedComponents } from "./app-routing.module";
 import { UtilitiesModule } from "./utilities";
-import { LoginModule } from "./login";
 import { VideoModule } from "./video";
-import { AdminModule } from "./admin";
+import { SharedModule } from "./shared";
 
 const declarables = [
     AppComponent,
@@ -23,17 +21,15 @@ const declarables = [
 
 @NgModule({
     imports: [
-        AdminModule,
         UtilitiesModule,
-        SharedModule,
         RoutingModule,
         BrowserModule,
         HttpModule,
         CommonModule,
-        LoginModule,
         FormsModule,
         ReactiveFormsModule,
         RouterModule,
+        SharedModule,
         VideoModule   
     ],
     declarations: [declarables],
