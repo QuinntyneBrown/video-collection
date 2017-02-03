@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Http } from "@angular/http";
 import { Observable } from "rxjs";
-import { OAuthHelper } from "../../utilities";
+import { OAuthHelper } from "../utilities";
 
 @Injectable()
 export class DigitalAssetService {

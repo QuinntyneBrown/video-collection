@@ -157,7 +157,6 @@
     <TypeScriptCompile Include="src\app\digital-assets\digital-asset.service.ts" />
     <TypeScriptCompile Include="src\app\digital-assets\index.ts" />
     <TypeScriptCompile Include="src\app\environment.ts" />
-    <TypeScriptCompile Include="src\app\shared\api.service.ts" />
     <TypeScriptCompile Include="src\app\shared\auth-guard.service.ts" />
     <TypeScriptCompile Include="src\app\shared\components\digital-asset-upload.component.ts" />
     <TypeScriptCompile Include="src\app\shared\components\index.ts" />
@@ -166,6 +165,12 @@
     <TypeScriptCompile Include="src\app\shared\index.ts" />
     <TypeScriptCompile Include="src\app\shared\login-redirect.service.ts" />
     <TypeScriptCompile Include="src\app\shared\shared.module.ts" />
+    <TypeScriptCompile Include="src\app\utilities\form-encode.ts" />
+    <TypeScriptCompile Include="src\app\utilities\guid.ts" />
+    <TypeScriptCompile Include="src\app\utilities\index.ts" />
+    <TypeScriptCompile Include="src\app\utilities\oauth-helper.ts" />
+    <TypeScriptCompile Include="src\app\utilities\storage.ts" />
+    <TypeScriptCompile Include="src\app\utilities\utilities.module.ts" />
     <TypeScriptCompile Include="src\app\videos\index.ts" />
     <TypeScriptCompile Include="src\app\videos\video-edit-page.component.ts" />
     <TypeScriptCompile Include="src\app\videos\video-list-page.component.ts" />
@@ -182,6 +187,7 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
