@@ -204,6 +204,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiConfiguration.cs" />
+    <Compile Include="Data\Models\HTMLContent.cs" />
     <Compile Include="Data\Models\ILoggable.cs" />
     <Compile Include="Data\Models\IPubllishable.cs" />
     <Compile Include="Features\DigitalAssets\Constants.cs" />
@@ -326,13 +327,20 @@
     <Compile Include="Features\Blog\TagApiModel.cs" />
     <Compile Include="Features\Blog\TagController.cs" />
     <Compile Include="Data\Models\ArticleTag.cs" />
+    <Compile Include="Migrations\HTMLContentConfiguration.cs" />
+    <Compile Include="Features\HTMLContents\AddOrUpdateHTMLContentCommand.cs" />
+    <Compile Include="Features\HTMLContents\GetHTMLContentsQuery.cs" />
+    <Compile Include="Features\HTMLContents\GetHTMLContentByIdQuery.cs" />
+    <Compile Include="Features\HTMLContents\RemoveHTMLContentCommand.cs" />
+    <Compile Include="Features\HTMLContents\HTMLContentApiModel.cs" />
+    <Compile Include="Features\HTMLContents\HTMLContentController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Features\VideoArticles\" />
+    <Folder Include="Features\HTMLContents\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -27,6 +27,7 @@ namespace VideoCollection.Data
         public DbSet<Tenant> Tenants { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<HTMLContent> HTMLContents { get; set; }
 
         public override int SaveChanges()
         {
