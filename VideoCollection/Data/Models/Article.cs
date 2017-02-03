@@ -17,7 +17,7 @@ namespace VideoCollection.Data.Models
         public Author Author { get; set; }
         public DateTime? PublishedDate { get; set; }
         public ICollection<ArticleTag> Tags { get; set; } = new HashSet<ArticleTag>();
-        public DateTime PublishedOn { get; set; }
+        public DateTime? PublishedOn { get; set; }
         public string PublishedBy { get; set; }
         public DateTime CreatedOn { get; set; }
         public string CreatedBy { get; set; }
