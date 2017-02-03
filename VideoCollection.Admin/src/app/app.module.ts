@@ -4,18 +4,19 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { RouterModule  } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { BlogModule } from "./blog";
+import { DigitalAssetModule } from "./digital-assets";
+import { VideoModule } from "./videos";
+import { SharedModule } from "./shared";
 
 import "./rxjs-extensions";
 
 import { AppComponent } from './app.component';
 
-import { ComponentsModule } from "./components";
-import { ServicesModule } from "./services";
-
 import {
     RoutingModule,
     routedComponents
-} from "./routing";
+} from "./app-routing.module";
 
 const declarables = [
     AppComponent,
@@ -28,15 +29,17 @@ const providers = [
 
 @NgModule({
     imports: [
-        ComponentsModule,
         RoutingModule,
-        ServicesModule,
-
         BrowserModule,
         HttpModule,
         CommonModule,
         FormsModule,
-        RouterModule
+        RouterModule,
+
+        BlogModule,
+        VideoModule,
+        SharedModule,
+        DigitalAssetModule
     ],
     providers: providers,
     declarations: [declarables],

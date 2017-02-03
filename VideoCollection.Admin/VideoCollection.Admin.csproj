@@ -139,6 +139,16 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="src\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="src\app\blog\article.model.ts" />
+    <TypeScriptCompile Include="src\app\blog\article.service.ts" />
+    <TypeScriptCompile Include="src\app\blog\author.model.ts" />
+    <TypeScriptCompile Include="src\app\blog\author.service.ts" />
+    <TypeScriptCompile Include="src\app\blog\avatar.model.ts" />
+    <TypeScriptCompile Include="src\app\blog\avatar.service.ts" />
+    <TypeScriptCompile Include="src\app\blog\blog.module.ts" />
+    <TypeScriptCompile Include="src\app\blog\index.ts" />
+    <TypeScriptCompile Include="src\app\blog\tag.model.ts" />
+    <TypeScriptCompile Include="src\app\blog\tag.service.ts" />
     <TypeScriptCompile Include="src\app\digital-assets\digital-asset-edit-page.component.ts" />
     <TypeScriptCompile Include="src\app\digital-assets\digital-asset-list-page.component.ts" />
     <TypeScriptCompile Include="src\app\digital-assets\digital-asset-upload-page.component.ts" />

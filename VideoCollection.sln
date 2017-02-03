@@ -12,6 +12,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection.Cli", "Vide
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection.SelfHost", "VideoCollection.SelfHost\VideoCollection.SelfHost.csproj", "{210E9975-2032-40D8-8B48-49ACC708AC33}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{87197410-97FC-4FAA-AB6A-A9057E31B137}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{BB906BB7-84B2-482B-9E65-AB6F9EFE42C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,5 +45,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BA3A0650-A18B-4731-8EAA-F73868320EF7} = {BB906BB7-84B2-482B-9E65-AB6F9EFE42C7}
+		{658DA84D-AD6C-414A-9333-B89232911187} = {87197410-97FC-4FAA-AB6A-A9057E31B137}
+		{41BEFAC6-47A4-445E-8AF1-82C008200337} = {87197410-97FC-4FAA-AB6A-A9057E31B137}
+		{7C0E7B22-DAB6-4973-B092-DE1E6AFD98C1} = {BB906BB7-84B2-482B-9E65-AB6F9EFE42C7}
+		{210E9975-2032-40D8-8B48-49ACC708AC33} = {BB906BB7-84B2-482B-9E65-AB6F9EFE42C7}
 	EndGlobalSection
 EndGlobal
