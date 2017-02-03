@@ -1,14 +1,18 @@
 ﻿import { Routes, RouterModule } from '@angular/router';
-import { } from "./blog";
-import { } from "./digital-assets";
-import { } from "./videos";
 
-import { AuthGuardService } from "./shared";
+import { AuthGuardService, LoginPageComponent } from "./core";
+
+import { DigitalAssetListPageComponent, DigitalAssetEditPageComponent } from "./digital-assets";
 
 export const routes: Routes = [
     {
         path: '',
-        component: null,
+        component: DigitalAssetListPageComponent,
+        canActivate: [AuthGuardService]
+    },
+    {
+        path: "login",
+        component: LoginPageComponent
     }
 ];
 
@@ -17,5 +21,6 @@ export const RoutingModule = RouterModule.forRoot([
 ]);
 
 export const routedComponents = [
-
+    LoginPageComponent,
+    DigitalAssetListPageComponent
 ];

@@ -2,6 +2,7 @@ using Owin;
 using System.Web.Http;
 using Microsoft.Owin;
 using Unity.WebApi;
+using static VideoCollection.ApiConfiguration;
 
 [assembly: OwinStartup(typeof(VideoCollection.Web.Startup))]
 
@@ -14,7 +15,7 @@ namespace VideoCollection.Web
             GlobalConfiguration.Configure(config =>
             {
                 config.DependencyResolver = new UnityDependencyResolver(UnityConfiguration.GetContainer());
-                VideoCollection.ApiConfiguration.Install(config, app);
+                Install(config, app);
             });
         }
     }

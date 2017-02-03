@@ -1,5 +1,2 @@
-export * from "./api.service";
-export * from "./auth-guard.service";
-export * from "./current-user.service";
-export * from "./login-redirect.service";
+export * from "./digital-asset-upload.component";
 export * from "./shared.module";

@@ -36,10 +36,10 @@ namespace VideoCollection.Data
 
                 if (((ILoggable)entry.Entity).CreatedOn == default(DateTime))
                 {
-                    ((ILoggable)entry.Entity).CreatedOn = DateTime.Now;
+                    ((ILoggable)entry.Entity).CreatedOn = DateTime.UtcNow;
                 }
 
-                ((ILoggable)entry.Entity).LastModifiedOn = DateTime.Now;
+                ((ILoggable)entry.Entity).LastModifiedOn = DateTime.UtcNow;
 
             }
 

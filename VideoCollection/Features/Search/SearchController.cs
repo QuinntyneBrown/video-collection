@@ -28,10 +28,16 @@ namespace VideoCollection.Features.Search
         public async Task<IHttpActionResult> Suggest([FromUri]GetSuggestResultsQuery.GetSuggestResultsRequest request)
             => Ok(await _mediator.Send(request));
 
-        [Route("upload")]        
+        [Route("uploadVideos")]        
         [HttpGet]
         [ResponseType(typeof(MergeOrUploadVideosCommand.MergeOrUploadResponse))]
-        public async Task<IHttpActionResult> Upload([FromUri]MergeOrUploadVideosCommand.MergeOrUploadRequest request)
+        public async Task<IHttpActionResult> UploadVideos([FromUri]MergeOrUploadVideosCommand.MergeOrUploadRequest request)
+            => Ok(await _mediator.Send(request));
+
+        [Route("uploadPhotos")] 
+        [HttpGet]
+        [ResponseType(typeof(MergeOrUploadArticlesCommand.MergeOrUploadArticlesResponse))]
+        public async Task<IHttpActionResult> UploadPhotos([FromUri]MergeOrUploadArticlesCommand.MergeOrUploadArticlesRequest request)
             => Ok(await _mediator.Send(request));
 
         protected readonly IMediator _mediator;

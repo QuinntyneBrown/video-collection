@@ -3,11 +3,15 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { RouterModule  } from '@angular/router';
 import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
-import { BlogModule } from "./blog";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+//import { BlogModule } from "./blog";
 import { DigitalAssetModule } from "./digital-assets";
-import { VideoModule } from "./videos";
-import { SharedModule } from "./shared";
+//import { VideoModule } from "./videos";
+//import { SharedModule } from "./shared";
+import { CoreModule } from "./core";
+import { UtilitiesModule } from "./utilities";
+
+//import { UserModule } from "./users";
 
 import "./rxjs-extensions";
 
@@ -35,11 +39,15 @@ const providers = [
         CommonModule,
         FormsModule,
         RouterModule,
+        ReactiveFormsModule,
 
-        BlogModule,
-        VideoModule,
-        SharedModule,
+        CoreModule,
+        UtilitiesModule,
+        //BlogModule,
+        //VideoModule,
+        //SharedModule,
         DigitalAssetModule
+        //UserModule
     ],
     providers: providers,
     declarations: [declarables],
