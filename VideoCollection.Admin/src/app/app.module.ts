@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //import { BlogModule } from "./blog";
 import { DigitalAssetModule } from "./digital-assets";
 //import { VideoModule } from "./videos";
-//import { SharedModule } from "./shared";
+import { SharedModule } from "./shared";
 import { CoreModule } from "./core";
 import { UtilitiesModule } from "./utilities";
 
@@ -47,7 +47,7 @@ const providers = [
         UtilitiesModule,
         //BlogModule,
         //VideoModule,
-        //SharedModule,
+        SharedModule,
         DigitalAssetModule
         //UserModule
     ],

@@ -2,12 +2,21 @@
 
 import { AuthGuardService, LoginPageComponent } from "./core";
 
-import { DigitalAssetListPageComponent, DigitalAssetEditPageComponent } from "./digital-assets";
+import {
+    DigitalAssetListPageComponent,
+    DigitalAssetEditPageComponent,
+    DigitalAssetUploadPageComponent
+} from "./digital-assets";
 
 export const routes: Routes = [
     {
         path: '',
         component: DigitalAssetListPageComponent,
+        canActivate: [AuthGuardService]
+    },
+    {
+        path: 'digitalassets/upload',
+        component: DigitalAssetUploadPageComponent,
         canActivate: [AuthGuardService]
     },
     {
@@ -22,5 +31,6 @@ export const RoutingModule = RouterModule.forRoot([
 
 export const routedComponents = [
     LoginPageComponent,
-    DigitalAssetListPageComponent
+    DigitalAssetListPageComponent,
+    DigitalAssetUploadPageComponent
 ];
