@@ -201,6 +201,12 @@
   <ItemGroup>
     <Content Include="package.json" />
     <Content Include=".gitignore" />
+    <Content Include="src\app\app-header.component.html">
+      <DependentUpon>app-header.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\app-header.component.scss">
+      <DependentUpon>app-header.component.ts</DependentUpon>
+    </Content>
     <Content Include="src\app\app.component.html">
       <DependentUpon>app.component.ts</DependentUpon>
     </Content>
@@ -327,6 +333,7 @@
     <TypeScriptCompile Include="src\app\users\user.service.ts" />
     <TypeScriptCompile Include="src\app\users\user.module.ts" />
     <TypeScriptCompile Include="src\app\core\login-page.component.ts" />
+    <TypeScriptCompile Include="src\app\app-header.component.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

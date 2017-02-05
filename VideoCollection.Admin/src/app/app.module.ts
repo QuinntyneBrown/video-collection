@@ -16,6 +16,7 @@ import { UtilitiesModule } from "./utilities";
 import "./rxjs-extensions";
 
 import { AppComponent } from './app.component';
+import { AppHeaderComponent } from "./app-header.component";
 
 import {
     RoutingModule,
@@ -24,6 +25,7 @@ import {
 
 const declarables = [
     AppComponent,
+    AppHeaderComponent,
     ...routedComponents
 ];
 

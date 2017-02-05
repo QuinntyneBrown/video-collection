@@ -6,20 +6,16 @@ namespace VideoCollection.Utilities
 {
     public class RedisCache : Cache
     {
-        public RedisCache()
-        {
-            _redisCacheConfiguration = RedisCacheConfiguration.Config;
-            _connection = ConnectionMultiplexer.Connect(_redisCacheConfiguration.ConnectionString);
-            _database = _connection.GetDatabase();
-        }
-
         private static volatile VideoCollection.Utilities.RedisCache _current = null;
-        
         private IDatabase _database { get; set; }
         private ConnectionMultiplexer _connection { get; set; }
         
-        public IRedisCacheConfiguration _redisCacheConfiguration { get; set; }
-
+        public RedisCache()
+        {
+            _connection = ConnectionMultiplexer.Connect(RedisCacheConfiguration.Config.ConnectionString);
+            _database = _connection.GetDatabase();            
+        }
+       
         public static RedisCache Current
         {
             get
@@ -31,7 +27,7 @@ namespace VideoCollection.Utilities
         }
 
         public override void Add(object objectToCache, string key)
-        {
+        {            
             _database.StringSet(key, JsonConvert.SerializeObject(objectToCache));
         }
 
