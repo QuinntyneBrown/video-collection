@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 
 import { DigitalAssetService } from './digital-asset.service';
+import { DigitalAssetListItemComponent } from './digital-asset-list-item.component';
 
-const declarables = [];
+const declarables = [DigitalAssetListItemComponent];
 const providers = [DigitalAssetService];
 
 @NgModule({

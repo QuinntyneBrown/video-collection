@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 
-import { ConfigurationComponent } from './configuration.component';
-
-const declarables = [ConfigurationComponent];
+const declarables = [];
 const providers = [];
 
 @NgModule({

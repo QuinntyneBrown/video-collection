@@ -12,10 +12,5 @@ export class DigitalAssetEditPageComponent {
         private _activatedRoute: ActivatedRoute
     ) { }
 
-    ngOnInit() {
-        
-    }
-
     private get _digitalAssetId() { return this._activatedRoute.snapshot.params["id"]; }
-    
 }

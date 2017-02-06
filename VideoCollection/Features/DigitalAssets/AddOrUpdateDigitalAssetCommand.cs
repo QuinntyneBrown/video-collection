@@ -35,10 +35,7 @@ namespace VideoCollection.Features.DigitalAssets
                 entity.Folder = request.DigitalAsset.Folder;
                 await _dataContext.SaveChangesAsync();
 
-                return new AddOrUpdateDigitalAssetResponse()
-                {
-
-                };
+                return new AddOrUpdateDigitalAssetResponse() { };
             }
 
             private readonly VideoCollectionDataContext _dataContext;

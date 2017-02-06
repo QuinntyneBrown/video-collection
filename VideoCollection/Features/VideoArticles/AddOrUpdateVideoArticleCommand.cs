@@ -2,9 +2,7 @@ using MediatR;
 using VideoCollection.Data;
 using VideoCollection.Data.Models;
 using VideoCollection.Utilities;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Linq;
 using System.Data.Entity;
 
 namespace VideoCollection.Features.VideoArticles
@@ -16,10 +14,7 @@ namespace VideoCollection.Features.VideoArticles
             public VideoArticleApiModel VideoArticle { get; set; }
         }
 
-        public class AddOrUpdateVideoArticleResponse
-        {
-
-        }
+        public class AddOrUpdateVideoArticleResponse { }
 
         public class AddOrUpdateVideoArticleHandler : IAsyncRequestHandler<AddOrUpdateVideoArticleRequest, AddOrUpdateVideoArticleResponse>
         {
@@ -46,7 +41,5 @@ namespace VideoCollection.Features.VideoArticles
             private readonly VideoCollectionDataContext _dataContext;
             private readonly ICache _cache;
         }
-
     }
-
 }

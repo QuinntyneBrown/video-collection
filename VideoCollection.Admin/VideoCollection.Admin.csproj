@@ -7,8 +7,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
+    <ProductVersion></ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{41BEFAC6-47A4-445E-8AF1-82C008200337}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -23,8 +22,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
     <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
     <TypeScriptEmitDecoratorMetadata>true</TypeScriptEmitDecoratorMetadata>
     <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
@@ -222,6 +220,12 @@
     <Content Include="src\app\digital-assets\digital-asset-edit-page.component.html">
       <DependentUpon>digital-asset-edit-page.component.ts</DependentUpon>
     </Content>
+    <Content Include="src\app\digital-assets\digital-asset-list-item.component.html">
+      <DependentUpon>digital-asset-list-item.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\digital-assets\digital-asset-list-item.component.scss">
+      <DependentUpon>digital-asset-list-item.component.ts</DependentUpon>
+    </Content>
     <Content Include="src\app\digital-assets\digital-asset-list-page.component.html">
       <DependentUpon>digital-asset-list-page.component.ts</DependentUpon>
     </Content>
@@ -288,6 +292,7 @@
     <TypeScriptCompile Include="src\app\blog\index.ts" />
     <TypeScriptCompile Include="src\app\blog\tag.model.ts" />
     <TypeScriptCompile Include="src\app\blog\tag.service.ts" />
+    <TypeScriptCompile Include="src\app\configuration\configuration.service.ts" />
     <TypeScriptCompile Include="src\app\core\exception.service.ts" />
     <TypeScriptCompile Include="src\app\digital-assets\digital-asset-edit-page.component.ts" />
     <TypeScriptCompile Include="src\app\digital-assets\digital-asset-list-page.component.ts" />
@@ -334,6 +339,7 @@
     <TypeScriptCompile Include="src\app\users\user.module.ts" />
     <TypeScriptCompile Include="src\app\core\login-page.component.ts" />
     <TypeScriptCompile Include="src\app\app-header.component.ts" />
+    <TypeScriptCompile Include="src\app\digital-assets\digital-asset-list-item.component.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -363,8 +369,7 @@
           <IISUrl>http://localhost:60614/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
+          <CustomServerUrl></CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
