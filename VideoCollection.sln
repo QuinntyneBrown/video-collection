@@ -2,19 +2,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection", "VideoCollection\VideoCollection.csproj", "{BA3A0650-A18B-4731-8EAA-F73868320EF7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection.Web", "VideoCollection.Web\VideoCollection.Web.csproj", "{658DA84D-AD6C-414A-9333-B89232911187}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection.Admin", "VideoCollection.Admin\VideoCollection.Admin.csproj", "{41BEFAC6-47A4-445E-8AF1-82C008200337}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection.Cli", "VideoCollection.Cli\VideoCollection.Cli.csproj", "{7C0E7B22-DAB6-4973-B092-DE1E6AFD98C1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection.SelfHost", "VideoCollection.SelfHost\VideoCollection.SelfHost.csproj", "{210E9975-2032-40D8-8B48-49ACC708AC33}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{87197410-97FC-4FAA-AB6A-A9057E31B137}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{BB906BB7-84B2-482B-9E65-AB6F9EFE42C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection", "Backend\VideoCollection\VideoCollection.csproj", "{BA3A0650-A18B-4731-8EAA-F73868320EF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection.Cli", "Backend\VideoCollection.Cli\VideoCollection.Cli.csproj", "{7C0E7B22-DAB6-4973-B092-DE1E6AFD98C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection.SelfHost", "Backend\VideoCollection.SelfHost\VideoCollection.SelfHost.csproj", "{210E9975-2032-40D8-8B48-49ACC708AC33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection.Admin", "Frontend\VideoCollection.Admin\VideoCollection.Admin.csproj", "{41BEFAC6-47A4-445E-8AF1-82C008200337}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection.Web", "Frontend\VideoCollection.Web\VideoCollection.Web.csproj", "{658DA84D-AD6C-414A-9333-B89232911187}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,14 +26,6 @@ Global
 		{BA3A0650-A18B-4731-8EAA-F73868320EF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA3A0650-A18B-4731-8EAA-F73868320EF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA3A0650-A18B-4731-8EAA-F73868320EF7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{658DA84D-AD6C-414A-9333-B89232911187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{658DA84D-AD6C-414A-9333-B89232911187}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{658DA84D-AD6C-414A-9333-B89232911187}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{658DA84D-AD6C-414A-9333-B89232911187}.Release|Any CPU.Build.0 = Release|Any CPU
-		{41BEFAC6-47A4-445E-8AF1-82C008200337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{41BEFAC6-47A4-445E-8AF1-82C008200337}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{41BEFAC6-47A4-445E-8AF1-82C008200337}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{41BEFAC6-47A4-445E-8AF1-82C008200337}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7C0E7B22-DAB6-4973-B092-DE1E6AFD98C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7C0E7B22-DAB6-4973-B092-DE1E6AFD98C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C0E7B22-DAB6-4973-B092-DE1E6AFD98C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -42,15 +34,23 @@ Global
 		{210E9975-2032-40D8-8B48-49ACC708AC33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{210E9975-2032-40D8-8B48-49ACC708AC33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{210E9975-2032-40D8-8B48-49ACC708AC33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41BEFAC6-47A4-445E-8AF1-82C008200337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41BEFAC6-47A4-445E-8AF1-82C008200337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41BEFAC6-47A4-445E-8AF1-82C008200337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41BEFAC6-47A4-445E-8AF1-82C008200337}.Release|Any CPU.Build.0 = Release|Any CPU
+		{658DA84D-AD6C-414A-9333-B89232911187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{658DA84D-AD6C-414A-9333-B89232911187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{658DA84D-AD6C-414A-9333-B89232911187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{658DA84D-AD6C-414A-9333-B89232911187}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BA3A0650-A18B-4731-8EAA-F73868320EF7} = {BB906BB7-84B2-482B-9E65-AB6F9EFE42C7}
-		{658DA84D-AD6C-414A-9333-B89232911187} = {87197410-97FC-4FAA-AB6A-A9057E31B137}
-		{41BEFAC6-47A4-445E-8AF1-82C008200337} = {87197410-97FC-4FAA-AB6A-A9057E31B137}
 		{7C0E7B22-DAB6-4973-B092-DE1E6AFD98C1} = {BB906BB7-84B2-482B-9E65-AB6F9EFE42C7}
 		{210E9975-2032-40D8-8B48-49ACC708AC33} = {BB906BB7-84B2-482B-9E65-AB6F9EFE42C7}
+		{41BEFAC6-47A4-445E-8AF1-82C008200337} = {87197410-97FC-4FAA-AB6A-A9057E31B137}
+		{658DA84D-AD6C-414A-9333-B89232911187} = {87197410-97FC-4FAA-AB6A-A9057E31B137}
 	EndGlobalSection
 EndGlobal
