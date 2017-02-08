@@ -17,6 +17,15 @@ export class DigitalAssetService {
             });
     }
 
+    public getById(options: { id: any }) {
+        return this._http
+            .get(`${this._baseUrl}/api/digitalasset/getbyid?id${options.id}`, { headers: this._oauthHelper.getOAuthHeaders() })
+            .map(data => data.json())
+            .catch(err => {
+                return Observable.of(false);
+            });
+    }
+
     public get() {
         return this._http
             .get(`${this._baseUrl}/api/digitalasset/get`, { headers: this._oauthHelper.getOAuthHeaders() })

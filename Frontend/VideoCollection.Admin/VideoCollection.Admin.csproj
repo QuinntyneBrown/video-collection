@@ -266,6 +266,10 @@
       <DependentUpon>digital-asset-upload.component.ts</DependentUpon>
     </Content>
     <Content Include="packages.config" />
+    <Content Include="src\styles\base\_all.scss" />
+    <Content Include="src\styles\base\_variables.scss" />
+    <Content Include="src\styles\base\_typography.scss" />
+    <Content Include="src\styles\base\_grid-settings.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
