@@ -245,6 +245,7 @@
     <Content Include="src\styles\_breakpoints.scss" />
     <Content Include="src\styles\_variables.scss" />
     <Content Include="Web.config" />
+    <Content Include="webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
