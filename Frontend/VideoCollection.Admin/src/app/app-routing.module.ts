@@ -15,7 +15,7 @@ export const routes: Routes = [
         canActivate: [AuthGuardService]
     },
     {
-        path: 'digitalassets/upload',
+        path: 'digital-asset/upload',
         component: DigitalAssetUploadPageComponent,
         canActivate: [AuthGuardService]
     },

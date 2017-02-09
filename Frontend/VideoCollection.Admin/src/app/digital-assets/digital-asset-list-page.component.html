@@ -1,13 +1,12 @@
 <div class="digital-asset-list-page">
     
-    <a href="" [routerLink]="['digitalassets','upload']"><button>Upload</button></a>
+    <a href="" [routerLink]="['digital-asset','upload']"><button>Upload</button></a>
 
-    <h2>Digital Assets: {{ digitalAssets.length }}</h2>
+    <h2>Digital Assets</h2>
 
     <ul>
         <li *ngFor="let digitalAsset of digitalAssets">
-            <a>{{ digitalAsset.folder }}</a>
-            <a>{{ digitalAsset.fileName }}</a>
+            <digit-asset-list-item [digitalAsset]="digitalAsset"></digit-asset-list-item>
         </li>
     </ul>
 </div>

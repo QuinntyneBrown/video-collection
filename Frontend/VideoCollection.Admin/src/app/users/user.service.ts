@@ -3,10 +3,13 @@ import { Http } from "@angular/http";
 import { User } from "./user.model";
 import { Observable } from "rxjs";
 import { ExceptionService } from "../core";
+import { ConfigurationService } from "../configuration";
 
 @Injectable()
 export class UserService {
-    constructor(private _http: Http) { }
+    constructor(
+        private _configurationService: ConfigurationService,
+        private _http: Http) { }
 
     public add(entity: User) {
         return this._http

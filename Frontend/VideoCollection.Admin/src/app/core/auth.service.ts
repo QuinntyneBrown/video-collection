@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { Http, Headers } from "@angular/http";
 import { Observable } from "rxjs";
 import { Storage, formEncode, OAuthHelper } from "../utilities"
+import { ConfigurationService } from "../configuration";
 
 @Injectable()
 export class AuthService {

@@ -2,5 +2,5 @@
 
 @Injectable()
 export class ConfigurationService {
-
+    public baseUrl: string;
 }

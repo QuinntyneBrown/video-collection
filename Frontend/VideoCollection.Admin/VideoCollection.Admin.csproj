@@ -317,6 +317,7 @@
     <TypeScriptCompile Include="src\app\shared\shared.module.ts" />
     <TypeScriptCompile Include="src\app\utilities\form-encode.ts" />
     <TypeScriptCompile Include="src\app\utilities\guid.ts" />
+    <TypeScriptCompile Include="src\app\utilities\in-memory-storage.ts" />
     <TypeScriptCompile Include="src\app\utilities\index.ts" />
     <TypeScriptCompile Include="src\app\utilities\oauth-helper.ts" />
     <TypeScriptCompile Include="src\app\utilities\storage.ts" />

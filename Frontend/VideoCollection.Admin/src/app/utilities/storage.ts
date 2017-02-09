@@ -1,6 +1,6 @@
 ﻿import { Injectable } from "@angular/core";
 
-export const storageKey = "[Video Collection App] Storage";
+export const storageKey = "[Video Collection Admin] Storage";
 
 @Injectable()
 export class Storage {

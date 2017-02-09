@@ -3,10 +3,14 @@ import { Http } from "@angular/http";
 import { Observable } from "rxjs";
 import { OAuthHelper } from "../utilities";
 import { ExceptionService } from "../core";
+import { ConfigurationService } from "../configuration";
 
 @Injectable()
 export class DigitalAssetService {
-    constructor(private _http: Http, private _oauthHelper: OAuthHelper) { }
+    constructor(
+        private _configurationService: ConfigurationService,
+        private _http: Http,
+        private _oauthHelper: OAuthHelper) { }
 
     public upload(options: { data: FormData}) {
         return this._http
