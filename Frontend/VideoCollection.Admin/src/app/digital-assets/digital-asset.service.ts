@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 import { OAuthHelper } from "../utilities";
 import { ExceptionService } from "../core";
 import { ConfigurationService } from "../configuration";
+import { DigitalAsset } from "./digital-asset.model";
 
 @Injectable()
 export class DigitalAssetService {
@@ -21,9 +22,27 @@ export class DigitalAssetService {
             });
     }
 
+    public addOrUpdate(options: { data: DigitalAsset }) {
+        return this._http
+            .post(`${this._baseUrl}/api/digitalasset/addorupdate`, options.data, { headers: this._oauthHelper.getOAuthHeaders() })
+            .map(data => data.json())
+            .catch(err => {
+                return Observable.of(false);
+            });
+    }
+
     public getById(options: { id: any }) {
         return this._http
             .get(`${this._baseUrl}/api/digitalasset/getbyid?id${options.id}`, { headers: this._oauthHelper.getOAuthHeaders() })
+            .map(data => data.json())
+            .catch(err => {
+                return Observable.of(false);
+            });
+    }
+
+    public remove(options: { id: any }) {
+        return this._http
+            .delete(`${this._baseUrl}/api/digitalasset/remove?id${options.id}`, { headers: this._oauthHelper.getOAuthHeaders() })
             .map(data => data.json())
             .catch(err => {
                 return Observable.of(false);

@@ -18,7 +18,9 @@ declare var jwplayer: any;
     selector: "jw-player-handler"
 })
 export class JwPlayerComponent implements AfterViewInit {
-    constructor(private _elementRef: ElementRef) { }
+    constructor(private _elementRef: ElementRef) {
+
+    }
 
     public uniqueId: string = guid();
 

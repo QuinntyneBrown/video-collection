@@ -12,9 +12,7 @@ export class DigitalAssetListItemComponent {
     constructor(
         private _digitalAssetService: DigitalAssetService,
         private _router: Router
-    ) {
-
-    }
+    ) { }
     
     @Input()
     public set digitalAsset(value: DigitalAsset) { this._digitalAsset = value; }
@@ -24,7 +22,7 @@ export class DigitalAssetListItemComponent {
     private _digitalAsset: DigitalAsset = <DigitalAsset>{};
 
     public onEdit() {
-        this._router.navigate(["digitalasset","edit",this.digitalAsset.id])
+        this._router.navigate(["digital-asset","edit",this.digitalAsset.id])
     }
 
     @Output()

@@ -16,10 +16,7 @@ namespace VideoCollection.Features.Users
             public RoleApiModel Role { get; set; }
         }
 
-        public class AddOrUpdateRoleResponse
-        {
-
-        }
+        public class AddOrUpdateRoleResponse { }
 
         public class AddOrUpdateRoleHandler : IAsyncRequestHandler<AddOrUpdateRoleRequest, AddOrUpdateRoleResponse>
         {
@@ -38,15 +35,11 @@ namespace VideoCollection.Features.Users
                 await _dataContext.SaveChangesAsync();
 
                 return new AddOrUpdateRoleResponse()
-                {
-
-                };
+                { };
             }
 
             private readonly VideoCollectionDataContext _dataContext;
             private readonly ICache _cache;
         }
-
     }
-
 }

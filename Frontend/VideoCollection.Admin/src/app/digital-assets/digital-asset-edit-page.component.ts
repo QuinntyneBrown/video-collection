@@ -17,8 +17,22 @@ export class DigitalAssetEditPageComponent implements OnInit {
 
     ngOnInit() {
         this._digitalAssetService.getById({ id: this._digitalAssetId })
-            .subscribe(() => {
+            .subscribe((results:any) => {
+                this.digitalAsset = results;
+            });
+    }
 
+    public onSave() {
+        this._digitalAssetService.addOrUpdate({ data: this.digitalAsset })
+            .subscribe(() => {
+                this._router.navigate(['digital-asset','list']);
+            });        
+    }
+
+    public onRemove() {
+        this._digitalAssetService.remove({ id: this.digitalAsset.id })
+            .subscribe(() => {
+                this._router.navigate(['digital-asset', 'list']);
             });
     }
 

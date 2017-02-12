@@ -335,13 +335,14 @@
     <Compile Include="Features\HTMLContents\HTMLContentApiModel.cs" />
     <Compile Include="Features\HTMLContents\HTMLContentController.cs" />
     <Compile Include="Features\Search\MergeOrUploadArticlesCommand.cs" />
+    <Compile Include="Features\Common\GetSiteMapQuery.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Features\HTMLContents\" />
+    <Folder Include="Features\Common\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
