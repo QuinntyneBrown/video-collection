@@ -8,6 +8,7 @@ import { Video } from "../video";
 @Injectable()
 export class ApiService {
     constructor(
+        private BASE_URL:string,
         private _http: Http,
         private _storage: Storage
     ) { }
@@ -27,6 +28,6 @@ export class ApiService {
             .map(data => data.json());
     }
     
-    public get _baseUrl() { return environment.baseUrl; }
+    public get _baseUrl() { return this.BASE_URL; }
 
 }

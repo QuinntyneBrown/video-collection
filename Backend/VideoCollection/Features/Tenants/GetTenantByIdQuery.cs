@@ -28,12 +28,11 @@ namespace VideoCollection.Features.Tenants
             }
 
             public async Task<GetTenantByIdResponse> Handle(GetTenantByIdRequest request)
-            {                
-                return new GetTenantByIdResponse()
+                =>  new GetTenantByIdResponse()
                 {
                     Tenant = TenantApiModel.FromTenant(await _dataContext.Tenants.FindAsync(request.Id))
                 };
-            }
+            
 
             private readonly VideoCollectionDataContext _dataContext;
             private readonly ICache _cache;

@@ -31,7 +31,6 @@ namespace VideoCollection.Features.Tenants
                 if (entity == null) _dataContext.Tenants.Add(entity = new Tenant());
                 entity.Name = request.Tenant.Name;
                 await _dataContext.SaveChangesAsync();
-
                 return new AddOrUpdateTenantResponse() { };
             }
 

@@ -13,9 +13,7 @@ export class SearchPageComponent implements OnInit {
         private _apiService: ApiService,
         private _elementRef: ElementRef,
         private _router: Router
-    ) {
-
-    }
+    ) { }
 
     ngOnInit = () => {
         let inputChanged$ = Observable
