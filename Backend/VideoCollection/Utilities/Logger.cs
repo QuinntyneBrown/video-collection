@@ -9,10 +9,7 @@ namespace VideoCollection.Utilities
         private readonly string _name;
         private ILogger[] _loggers;
 
-        public Logger()
-        {
-
-        }
+        public Logger() { }
 
         public Logger(LoggerFactory loggerFactory, string categoryName)
         {
