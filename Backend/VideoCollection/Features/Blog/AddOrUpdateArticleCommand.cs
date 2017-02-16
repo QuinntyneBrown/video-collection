@@ -16,10 +16,7 @@ namespace VideoCollection.Features.Blog
             public ArticleApiModel Article { get; set; }
         }
 
-        public class AddOrUpdateArticleResponse
-        {
-
-        }
+        public class AddOrUpdateArticleResponse { }
 
         public class AddOrUpdateArticleHandler : IAsyncRequestHandler<AddOrUpdateArticleRequest, AddOrUpdateArticleResponse>
         {
@@ -37,10 +34,7 @@ namespace VideoCollection.Features.Blog
                 entity.Title = request.Article.Title;
                 await _dataContext.SaveChangesAsync();
 
-                return new AddOrUpdateArticleResponse()
-                {
-
-                };
+                return new AddOrUpdateArticleResponse() { };
             }
 
             private readonly VideoCollectionDataContext _dataContext;

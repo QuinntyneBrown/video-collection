@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VideoCollection.Data.Models
 {
     public class Article: ILoggable, IPubllishable
     {
+        [Required]
         public int Id { get; set; }
         public int? TenantId { get; set; }
         public string Slug { get; set; }
