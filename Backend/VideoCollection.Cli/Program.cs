@@ -2,10 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using static System.Console;
-using static VideoCollection.Features.Videos.GetVideosQuery;
-
 using MediatR;
+using static System.Console;
+using static VideoCollection.Cli.Commands.ListAllVideosCommand;
 
 namespace VideoCollection.Cli
 {
@@ -13,24 +12,18 @@ namespace VideoCollection.Cli
     {
         private readonly IUnityContainer _container;
         private readonly Dictionary<string, Func<string[], dynamic>> _commands;
-        private readonly IMediator _mediator;
-        private readonly IRequestFactory _requestFactory;
-
-        public Program()
+        
+        public Program(IRequestFactory requestFactory, IMediator mediator)
         {
-            _container = UnityConfiguration.GetContainer();
-            _requestFactory = new RequestFactory();
-            _mediator = _container.Resolve<IMediator>();
-
             _commands = new Dictionary<string, Func<string[], dynamic>>
             {
-                ["all-videos"] = args => _mediator.Send(_requestFactory.MakeRequest<GetVideosRequest,GetVideosResponse>(args))
+                ["all-videos"] = args => mediator.Send(requestFactory.MakeRequest<ListAllVideosRequest,ListAllVideosResponse>(args))
             };
         }
 
         static void Main(string[] args)
         {
-            new Program().ProcessArgs(args);
+            UnityConfiguration.GetContainer().Resolve<Program>().ProcessArgs(args);
         }
         
         public int ProcessArgs(string[] args)

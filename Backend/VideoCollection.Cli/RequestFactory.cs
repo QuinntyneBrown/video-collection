@@ -1,6 +1,5 @@
 ﻿using System;
 using MediatR;
-using static VideoCollection.Features.Videos.GetVideosQuery;
 
 namespace VideoCollection.Cli
 {
@@ -15,7 +14,10 @@ namespace VideoCollection.Cli
         public IRequest<TResponse> MakeRequest<TRequest, TResponse>(string[] args) 
             where TRequest : IRequest<TResponse>
         {
-            return new GetVideosRequest() as IRequest<TResponse>;
+            if(typeof(TRequest) == typeof(Commands.ListAllVideosCommand.ListAllVideosRequest))
+                return new Commands.ListAllVideosCommand.ListAllVideosRequest() as IRequest<TResponse>;
+
+            throw new NotImplementedException();
         }
     }
 }
