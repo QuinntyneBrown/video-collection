@@ -3,28 +3,36 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using static System.Console;
+using static VideoCollection.Features.Videos.GetVideosQuery;
+
+using MediatR;
 
 namespace VideoCollection.Cli
 {
     public class Program
     {
         private readonly IUnityContainer _container;
-        private readonly Dictionary<string, Func<string[], int>> _commands;
+        private readonly Dictionary<string, Func<string[], dynamic>> _commands;
+        private readonly IMediator _mediator;
+        private readonly IRequestFactory _requestFactory;
 
         public Program()
         {
             _container = UnityConfiguration.GetContainer();
+            _requestFactory = new RequestFactory();
+            _mediator = _container.Resolve<IMediator>();
 
-            _commands = new Dictionary<string, Func<string[], int>>
+            _commands = new Dictionary<string, Func<string[], dynamic>>
             {
-                
+                ["all-videos"] = args => _mediator.Send(_requestFactory.MakeRequest<GetVideosRequest,GetVideosResponse>(args))
             };
         }
+
         static void Main(string[] args)
         {
             new Program().ProcessArgs(args);
         }
-
+        
         public int ProcessArgs(string[] args)
         {
             bool? verbose = null;
@@ -58,7 +66,7 @@ namespace VideoCollection.Cli
             var appArgs = (lastArg + 1) >= args.Length ? Enumerable.Empty<string>() : args.Skip(lastArg + 1).ToArray();
 
             int exitCode;
-            Func<string[], int> builtIn;
+            Func<string[], dynamic> builtIn;
             if (_commands.TryGetValue(command, out builtIn))
             {
                 exitCode = builtIn(appArgs.ToArray());

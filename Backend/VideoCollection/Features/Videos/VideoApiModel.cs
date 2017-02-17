@@ -40,6 +40,5 @@ namespace VideoCollection.Features.Videos
 
         public static VideoApiModel FromVideo(Video video)
             => FromVideo<VideoApiModel>(video);
-
     }
 }
