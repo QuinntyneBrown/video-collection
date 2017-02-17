@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using MediatR;
 using static System.Console;
-using static VideoCollection.Cli.Commands.ListAllVideosCommand;
+using static VideoCollection.Cli.Commands.Videos.ListAllVideosCommand;
+using static VideoCollection.Cli.Commands.MainMenuCommand;
 
 namespace VideoCollection.Cli
 {
@@ -17,7 +18,8 @@ namespace VideoCollection.Cli
         {
             _commands = new Dictionary<string, Func<string[], dynamic>>
             {
-                ["all-videos"] = args => mediator.Send(requestFactory.MakeRequest<ListAllVideosRequest,ListAllVideosResponse>(args))
+                ["all-videos"] = args => mediator.Send(requestFactory.MakeRequest<ListAllVideosRequest,ListAllVideosResponse>(args)),
+                ["main-menu"] = args => mediator.Send(requestFactory.MakeRequest<MainMenuRequest, MainMenuResponse>(args))
             };
         }
 
@@ -30,7 +32,7 @@ namespace VideoCollection.Cli
         {
             bool? verbose = null;
             var success = true;
-            var command = string.Empty;
+            var command = "main-menu";
             var lastArg = 0;
             for (; lastArg < args.Length; lastArg++)
             {
@@ -62,13 +64,10 @@ namespace VideoCollection.Cli
             Func<string[], dynamic> builtIn;
             if (_commands.TryGetValue(command, out builtIn))
             {
-                exitCode = builtIn(appArgs.ToArray());
+                builtIn(appArgs.ToArray());
             }
-            else
-            {
-                exitCode = 0;
-            }
-            return exitCode;
+            
+            return 0;
         }
 
         private static bool IsArg(string candidate, string longName) => IsArg(candidate, shortName: null, longName: longName);

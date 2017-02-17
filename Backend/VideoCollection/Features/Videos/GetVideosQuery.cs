@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Data.Entity;
+using System.Net.Http;
+using VideoCollection.Data.Models;
 
 namespace VideoCollection.Features.Videos
 {
@@ -26,8 +28,9 @@ namespace VideoCollection.Features.Videos
             }
 
             public async Task<GetVideosResponse> Handle(GetVideosRequest request)
-            {
+            {                
                 var videos = await _dataContext.Videos.ToListAsync();
+                
                 return new GetVideosResponse()
                 {
                     Videos = videos.Select(x => VideoApiModel.FromVideo(x)).ToList()

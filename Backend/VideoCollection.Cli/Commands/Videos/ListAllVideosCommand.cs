@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using static VideoCollection.Features.Videos.GetVideosQuery;
 using System;
 
-namespace VideoCollection.Cli.Commands
+namespace VideoCollection.Cli.Commands.Videos
 {
     public class ListAllVideosCommand
     {
