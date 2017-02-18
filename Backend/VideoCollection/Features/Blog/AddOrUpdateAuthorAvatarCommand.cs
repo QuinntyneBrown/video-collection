@@ -2,9 +2,7 @@ using MediatR;
 using VideoCollection.Data;
 using VideoCollection.Data.Models;
 using VideoCollection.Utilities;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Linq;
 using System.Data.Entity;
 
 namespace VideoCollection.Features.Blog
@@ -16,10 +14,7 @@ namespace VideoCollection.Features.Blog
             public AuthorAvatarApiModel AuthorAvatar { get; set; }
         }
 
-        public class AddOrUpdateAuthorAvatarResponse
-        {
-
-        }
+        public class AddOrUpdateAuthorAvatarResponse { }
 
         public class AddOrUpdateAuthorAvatarHandler : IAsyncRequestHandler<AddOrUpdateAuthorAvatarRequest, AddOrUpdateAuthorAvatarResponse>
         {
@@ -34,19 +29,14 @@ namespace VideoCollection.Features.Blog
                 var entity = await _dataContext.AuthorAvatars
                     .SingleOrDefaultAsync(x => x.Id == request.AuthorAvatar.Id && x.IsDeleted == false);
                 if (entity == null) _dataContext.AuthorAvatars.Add(entity = new AuthorAvatar());
-                entity.Name = request.AuthorAvatar.Name;
+                
                 await _dataContext.SaveChangesAsync();
 
-                return new AddOrUpdateAuthorAvatarResponse()
-                {
-
-                };
+                return new AddOrUpdateAuthorAvatarResponse() { };
             }
 
             private readonly VideoCollectionDataContext _dataContext;
             private readonly ICache _cache;
         }
-
     }
-
 }
