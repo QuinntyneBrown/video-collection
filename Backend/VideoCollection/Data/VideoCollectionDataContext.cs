@@ -45,5 +45,12 @@ namespace VideoCollection.Data
 
             return base.SaveChanges();
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<AuthorAvatar>()
+            .HasRequired(authorAvatar => authorAvatar.Author)
+            .WithOptional(author => author.AuthorAvatar);
+        }
     }
 }

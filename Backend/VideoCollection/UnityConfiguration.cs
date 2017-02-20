@@ -4,6 +4,7 @@ using MediatR;
 using VideoCollection.Utilities;
 using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace VideoCollection
 {
@@ -11,30 +12,39 @@ namespace VideoCollection
     {
         public static IUnityContainer GetContainer()
         {
-            var container = new UnityContainer();
+            var container = new UnityContainer().AddMediator<UnityConfiguration>();             
+            container.RegisterInstance(AuthConfiguration.LazyConfig);
+            container.RegisterInstance(RedisCacheConfiguration.Config);
+            return container;
+        }
+    }
 
-            container.RegisterType<IMediator, Mediator>();
+    public static class UnityContainerExtension {
 
-            var classes = AllClasses.FromAssemblies(typeof(UnityConfiguration).Assembly)
-                .Where(x=>x.Name.Contains("Controller") == false && x.FullName.Contains("Data.Models") == false)
+        public static IUnityContainer AddMediator<T>(this IUnityContainer container)
+        {
+            var classes = AllClasses.FromAssemblies(typeof(T).Assembly)
+                .Where(x => x.Name.Contains("Controller") == false && x.FullName.Contains("Data.Models") == false)
                 .ToList();
 
-            container.RegisterTypes(classes, WithMappings.FromAllInterfaces, GetName, GetLifetimeManager);
+            container.RegisterClasses(classes);
+
+            container.RegisterType<IMediator, Mediator>();
             container.RegisterInstance<SingleInstanceFactory>(t => container.IsRegistered(t) ? container.Resolve(t) : null);
             container.RegisterInstance<MultiInstanceFactory>(t => container.ResolveAll(t));
-
-            container.RegisterInstance(AuthConfiguration.LazyConfig);
-            container.RegisterInstance(RedisCacheConfiguration.Config);            
             return container;
         }
 
-        static bool IsNotificationHandler(Type type)
+        public static void RegisterClasses(this IUnityContainer container, IList<Type> types)
+            => container.RegisterTypes(types, WithMappings.FromAllInterfaces, container.GetName, container.GetLifetimeManager);
+
+        public static bool IsNotificationHandler(this IUnityContainer container, Type type)
             => type.GetInterfaces().Any(x => x.IsGenericType && (x.GetGenericTypeDefinition() == typeof(INotificationHandler<>) || x.GetGenericTypeDefinition() == typeof(IAsyncNotificationHandler<>)));
 
-        static LifetimeManager GetLifetimeManager(Type type)
-            => IsNotificationHandler(type) ? new ContainerControlledLifetimeManager() : null;
+        public static LifetimeManager GetLifetimeManager(this IUnityContainer container, Type type)
+            => container.IsNotificationHandler(type) ? new ContainerControlledLifetimeManager() : null;
 
-        static string GetName(Type type)
-            => IsNotificationHandler(type) ? string.Format("HandlerFor" + type.Name) : string.Empty;
+        public static string GetName(this IUnityContainer container, Type type)
+            => container.IsNotificationHandler(type) ? string.Format("HandlerFor" + type.Name) : string.Empty;
     }
 }

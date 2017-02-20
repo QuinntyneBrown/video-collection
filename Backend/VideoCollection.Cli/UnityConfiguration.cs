@@ -40,4 +40,9 @@ namespace VideoCollection.Cli
         static string GetName(Type type)
             => IsNotificationHandler(type) ? string.Format("HandlerFor" + type.Name) : string.Empty;
     }
+
+    public static class UnityConfigurationExtensions
+    {
+
+    }
 }
