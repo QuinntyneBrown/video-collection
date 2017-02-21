@@ -12,7 +12,9 @@ namespace VideoCollection
     {
         public static IUnityContainer GetContainer()
         {
-            var container = new UnityContainer().AddMediator<UnityConfiguration>();             
+            var container = new UnityContainer()
+                .AddMediator<UnityConfiguration>();     
+                    
             container.RegisterInstance(AuthConfiguration.LazyConfig);
             container.RegisterInstance(RedisCacheConfiguration.Config);
             return container;
@@ -27,8 +29,25 @@ namespace VideoCollection
                 .Where(x => x.Name.Contains("Controller") == false && x.FullName.Contains("Data.Models") == false)
                 .ToList();
 
-            container.RegisterClasses(classes);
+            return container.RegisterClassesTypesAndInstances(classes);
+        }
 
+        public static IUnityContainer AddMediator<T1,T2>(this IUnityContainer container)
+        {
+            var classes = AllClasses.FromAssemblies(typeof(T1).Assembly)
+                .Where(x => x.Name.Contains("Controller") == false && x.FullName.Contains("Data.Models") == false)
+                .ToList();
+
+            classes.AddRange(AllClasses.FromAssemblies(typeof(T2).Assembly)
+                .Where(x => x.Name.Contains("Controller") == false && x.FullName.Contains("Data.Models") == false)
+                .ToList());
+
+            return container.RegisterClassesTypesAndInstances(classes);
+        }
+
+        public static IUnityContainer RegisterClassesTypesAndInstances(this IUnityContainer container, IList<Type> classes)
+        {
+            container.RegisterClasses(classes);
             container.RegisterType<IMediator, Mediator>();
             container.RegisterInstance<SingleInstanceFactory>(t => container.IsRegistered(t) ? container.Resolve(t) : null);
             container.RegisterInstance<MultiInstanceFactory>(t => container.ResolveAll(t));
