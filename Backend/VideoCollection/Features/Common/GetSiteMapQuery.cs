@@ -3,26 +3,13 @@ using VideoCollection.Data;
 using VideoCollection.Utilities;
 using System.Threading.Tasks;
 
-
 namespace VideoCollection.Features.Common
 {
     public class GetSiteMapQuery
     {
-        public class GetSiteMapRequest : IRequest<GetSiteMapResponse>
-        {
-            public GetSiteMapRequest()
-            {
+        public class GetSiteMapRequest : IRequest<GetSiteMapResponse> { }
 
-            }
-        }
-
-        public class GetSiteMapResponse
-        {
-            public GetSiteMapResponse()
-            {
-
-            }
-        }
+        public class GetSiteMapResponse { }
 
         public class GetSiteMapHandler : IAsyncRequestHandler<GetSiteMapRequest, GetSiteMapResponse>
         {

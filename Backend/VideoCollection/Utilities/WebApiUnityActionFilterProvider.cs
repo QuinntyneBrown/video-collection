@@ -5,7 +5,7 @@ using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 
-namespace VideoCollection.Filters
+namespace VideoCollection.Utilities
 {
     public class WebApiUnityActionFilterProvider : ActionDescriptorFilterProvider, IFilterProvider
     {

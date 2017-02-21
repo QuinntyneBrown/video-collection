@@ -1,7 +1,6 @@
 using System.Web.Http.Filters;
-using VideoCollection.Utilities;
 
-namespace VideoCollection.Filters
+namespace VideoCollection.Utilities
 {
     public class HandleErrorAttribute : ExceptionFilterAttribute
     {

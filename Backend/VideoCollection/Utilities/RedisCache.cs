@@ -42,7 +42,7 @@ namespace VideoCollection.Utilities
         public override void ClearAll()
         {
             foreach (var endpoint in _connection.GetEndPoints())
-            {
+            {                
                 var server = _connection.GetServer(endpoint);
                 server.FlushAllDatabases();
             }

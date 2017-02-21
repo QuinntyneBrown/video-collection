@@ -9,7 +9,6 @@ using Microsoft.Owin.Cors;
 using System;
 using VideoCollection.Utilities;
 using VideoCollection.Security;
-using VideoCollection.Filters;
 using MediatR;
 
 namespace VideoCollection
