@@ -1,17 +1,17 @@
-@import "../styles/breakpoints";
+@import "../styles/base/all";
 
 
-@media only screen and (min-width: $screen-sm-min) { 
-
-
-}
-
-@media only screen and (min-width: $screen-md-min) { 
+@media only screen and (min-width: $small-screen) { 
 
 
 }
 
-@media only screen and (min-width: $screen-lg-min) { 
+@media only screen and (min-width: $medium-screen) { 
+
+
+}
+
+@media only screen and (min-width: $large-screen) { 
 
 
 }

@@ -1,21 +1,21 @@
-@import "../../styles/breakpoints";
+@import "../../styles/base/all";
+
+@media only screen and (min-width: $small-screen) { 
+
+
+}
+
+@media only screen and (min-width: $medium-screen) { 
+
+
+}
+
+@media only screen and (min-width: $large-screen) { 
+
+
+}
 
 .digital-asset-upload-page {
     width:100%;
     margin:0% 4%;
-}
-
-@media only screen and (min-width: $screen-sm-min) { 
-
-
-}
-
-@media only screen and (min-width: $screen-md-min) { 
-
-
-}
-
-@media only screen and (min-width: $screen-lg-min) { 
-
-
 }

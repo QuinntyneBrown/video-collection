@@ -1,5 +1,4 @@
-@import "../styles/breakpoints";
-@import "../styles/variables";
+@import "../styles/base/all";
 
 body,html {
     margin:0;
@@ -31,17 +30,18 @@ h2 {
     margin:0;
 }
 
-@media only screen and (min-width: $screen-sm-min) { 
+
+@media only screen and (min-width: $small-screen) { 
 
 
 }
 
-@media only screen and (min-width: $screen-md-min) { 
+@media only screen and (min-width: $medium-screen) { 
 
 
 }
 
-@media only screen and (min-width: $screen-lg-min) { 
+@media only screen and (min-width: $large-screen) { 
 
 
 }

@@ -245,8 +245,6 @@
     </Content>
     <Content Include="tsconfig.json" />
     <Content Include="typings.json" />
-    <Content Include="src\styles\_breakpoints.scss" />
-    <Content Include="src\styles\_variables.scss" />
     <Content Include="src\app\digital-assets\digital-asset-edit-page.component.scss">
       <DependentUpon>digital-asset-edit-page.component.ts</DependentUpon>
     </Content>
