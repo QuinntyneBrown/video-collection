@@ -6,15 +6,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{87
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{BB906BB7-84B2-482B-9E65-AB6F9EFE42C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection", "Backend\VideoCollection\VideoCollection.csproj", "{BA3A0650-A18B-4731-8EAA-F73868320EF7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1A7D16B3-89C9-4830-8582-F3C7C4679DD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection.Cli", "Backend\VideoCollection.Cli\VideoCollection.Cli.csproj", "{7C0E7B22-DAB6-4973-B092-DE1E6AFD98C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection", "src\Backend\VideoCollection\VideoCollection.csproj", "{BA3A0650-A18B-4731-8EAA-F73868320EF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection.SelfHost", "Backend\VideoCollection.SelfHost\VideoCollection.SelfHost.csproj", "{210E9975-2032-40D8-8B48-49ACC708AC33}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection.Cli", "src\Backend\VideoCollection.Cli\VideoCollection.Cli.csproj", "{7C0E7B22-DAB6-4973-B092-DE1E6AFD98C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection.Admin", "Frontend\VideoCollection.Admin\VideoCollection.Admin.csproj", "{41BEFAC6-47A4-445E-8AF1-82C008200337}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection.SelfHost", "src\Backend\VideoCollection.SelfHost\VideoCollection.SelfHost.csproj", "{210E9975-2032-40D8-8B48-49ACC708AC33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection.Web", "Frontend\VideoCollection.Web\VideoCollection.Web.csproj", "{658DA84D-AD6C-414A-9333-B89232911187}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection.Admin", "src\Frontend\VideoCollection.Admin\VideoCollection.Admin.csproj", "{41BEFAC6-47A4-445E-8AF1-82C008200337}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCollection.Web", "src\Frontend\VideoCollection.Web\VideoCollection.Web.csproj", "{658DA84D-AD6C-414A-9333-B89232911187}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{87197410-97FC-4FAA-AB6A-A9057E31B137} = {1A7D16B3-89C9-4830-8582-F3C7C4679DD9}
+		{BB906BB7-84B2-482B-9E65-AB6F9EFE42C7} = {1A7D16B3-89C9-4830-8582-F3C7C4679DD9}
 		{BA3A0650-A18B-4731-8EAA-F73868320EF7} = {BB906BB7-84B2-482B-9E65-AB6F9EFE42C7}
 		{7C0E7B22-DAB6-4973-B092-DE1E6AFD98C1} = {BB906BB7-84B2-482B-9E65-AB6F9EFE42C7}
 		{210E9975-2032-40D8-8B48-49ACC708AC33} = {BB906BB7-84B2-482B-9E65-AB6F9EFE42C7}
